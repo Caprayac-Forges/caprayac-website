@@ -1,71 +1,95 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+/* Import Montserrat font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+/* General page settings */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #111;
+  color: #fff;
+  overflow-x: hidden;
 }
 
-body{
-    font-family: 'Montserrat', sans-serif;
-    background-color: #111;
-    color: #eee;
-    overflow-x: hidden;
-    line-height: 1.6;
+/* Banner logo styling */
+header .banner img {
+  width: 100%;
+  display: block;
+  max-height: 180px; /* adjust as needed */
+  object-fit: cover;
 }
 
-header {
-    padding: 1rem 0;
-    text-align: center;
-    background: #111;
+/* Header content (title + nav) */
+.header-content {
+  text-align: center;
+  padding: 1.5rem 1rem;
 }
 
-.logo img {
-    max-width: 100%;
-    height:auto;
-    max-height: 200px;
-    display: block;
-    margin: 0 auto;
+.header-content h1 {
+  font-size: 2.5rem;
+  margin: 0.5rem 0 1rem;
 }
 
-.logo h1{
-    font-size: 2rem;
-    margin-top: 0.5rem;
-}
-
+/* Navigation */
 nav {
-    margin-top: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 nav a {
-    color: #eee;
-    text-decoration: none;
-    margin: 0 1rem;
-    font-weight: 600;
+  margin: 0 1rem;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  transition: color 0.3s ease;
 }
 
 nav a:hover {
-    color: #6cf;
+  color: #89cdfa;
 }
 
+/* Main content layout */
 main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
+  padding: 2rem 1rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
+.hero h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.featured h3 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+}
+
+.featured p {
+  margin: 0.5rem 0;
+}
+
+/* Button style */
 .button {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background-color: #6cf;
-    color: #000;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: 1rem;
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #33b5e5;
+  color: #111;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
+.button:hover {
+  background-color: #2ca7d4;
+}
+
+/* Footer */
 footer {
-    background-color: #1a1a1a;
-    text-align: center;
-    padding: 1rem;
-    font-size: 0.8rem;
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #0d0d0d;
+  font-size: 0.9rem;
+  color: #ccc;
 }
