@@ -28,8 +28,15 @@ main {
   width: 100%;
   height: auto;
   max-height: 434px;
+  object-fit: cover;
   display: block;
-  object-fit: contain;
+  margin: 0 auto;
+}
+
+.banner {
+  width: 100%;
+  overflow: hidden;
+  background-color: #000;
 }
 
 /* Navigation Bar (below banner) */
