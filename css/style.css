@@ -84,6 +84,31 @@ nav a:hover {
   font-weight: 700;
 }
 
+.featured-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.featured-text{
+  flex: 1;
+  max-width: 250px;
+}
+
+.featured-image {
+  flex: 1;
+  max-width: 250px;
+  text-align: right;
+}
+
+.featurted-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
 .button {
   display: inline-block;
   background-color: #f3bf4d;
