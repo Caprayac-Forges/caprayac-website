@@ -9,7 +9,7 @@ body {
 }
 
 a {
-  color: #f3bf4d;
+  color: #ffdfa2;
   text-decoration: none;
 }
 
@@ -51,12 +51,12 @@ nav {
 nav a {
   font-size: 1rem;
   font-weight: 600;
-  color: #f3bf4d;;
+  color: #ffdfa2;
   transition: color 0.3s ease;
 }
 
 nav a:hover {
-  color: #f3bf4d;;
+  color: #ffdfa2;
 }
 
 /* Hero Section */
@@ -67,7 +67,7 @@ nav a:hover {
 
 .hero p {
   font-size: 1rem;
-  color: #f3bf4d;;
+  color: #ffdfa2;
 }
 
 /* Featured Game Section */
