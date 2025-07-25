@@ -86,16 +86,17 @@ nav a:hover {
 
 .featured-content {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem 0;
   flex-wrap: wrap;
 }
 
 .featured-text{
-  flex: 1;
+  flex: 0 0 auto;
   max-width: 250px;
+  margin: 0;
 }
 
 .featured-image {
@@ -106,9 +107,9 @@ nav a:hover {
 
 .featured-image img {
   width: 100%;
-  max-width: 300;
   height: auto;
-  border-radius: 8px;
+  display: block;
+  border-radius: 12px;
 }
 
 .button {
