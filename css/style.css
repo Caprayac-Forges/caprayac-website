@@ -26,10 +26,10 @@ main {
 /* Banner Image */
 .banner img {
   width: 100%;
-  height: 100%;
+  height: auto;
+  max-height: 434px;
   display: block;
-  object-fit: cover;
-  max-height: 250px;
+  object-fit: contain;
 }
 
 /* Navigation Bar (below banner) */
