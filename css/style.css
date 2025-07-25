@@ -121,13 +121,24 @@ nav a:hover {
 .social-nav {
   display: flex;
   justify-content: center;
-  gap: 2rem;
   align-items: center;
+  gap: 2rem;
+  padding: 1rem 0;
+  background-color: #240e0e;
+}
+
+.social-nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
 }
 
 .social-nav a img {
   width: 24px;
   height: 24px;
+  object-fit: contain;
   transition: transform 0.3s ease, filter 0.3s ease;
   filter: brightness(0) invert(1);
 }
