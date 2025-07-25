@@ -4,7 +4,7 @@ body {
   padding: 0;
   font-family: 'Montserrat', sans-serif;
   background-color: #381918;
-  color: #f3bf4d;
+  color: #ffdfa2;
   overflow-x: hidden;
 }
 
@@ -43,7 +43,7 @@ main {
 nav {
   display: flex;
   justify-content: center;
-  background-color: #381918;
+  background-color: #240e0e;
   padding: 1rem;
   gap: 2rem;
 }
@@ -105,6 +105,6 @@ footer {
   padding: 1rem 0;
   font-size: 0.9rem;
   color: #f3bf4d;
-  border-top: 1px solid #381918;
+  border-top: 1px solid #240e0e;
   margin-top: 2rem;
 }
