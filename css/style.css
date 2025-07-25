@@ -112,6 +112,31 @@ nav a:hover {
   border-radius: 12px;
 }
 
+.social-banner {
+  background-color: #240e0e;
+  padding: 0.5rem 0;
+  text-align: center;
+}
+
+.social-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+}
+
+.social-nav a img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: brightness(0) invert(1);
+}
+
+.social-nav a:hover img {
+  transform: scale(1.2);
+  filter: brightness(1.2) drop-shadow(0 0 5px #ffdfa2);
+}
+
 .button {
   display: inline-block;
   background-color: #f3bf4d;
