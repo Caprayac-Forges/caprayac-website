@@ -113,18 +113,20 @@ nav a:hover {
 }
 
 .social-banner {
+  width: 100%;
   background-color: #240e0e;
-  padding: 0.5rem 0;
-  text-align: center;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #f3bf4d;
+  border-bottom: 1px solid #f3bf4d;
+  margin-top: 2rem;
 }
 
 .social-nav {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  padding: 1rem 0;
-  background-color: #240e0e;
+  gap: 1.5rem;
 }
 
 .social-nav a {
