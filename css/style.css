@@ -1,129 +1,151 @@
-/* General styles */
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
-  background-color: #fff8e1;
-  color: #3e1f0d;
+  background-color: #121212;
+  color: #f0f0f0;
 }
 
-/* Header */
-header {
-  background-color: #ffc845;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 999;
-  padding: 10px 20px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-.header-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+a {
+  color: #e6c679;
+  text-decoration: none;
+  margin: 0 10px;
 }
 
 .logo {
-  height: 50px;
+  height: 40px;
+  margin-right: 20px;
 }
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #3e1f0d;
-  font-weight: bold;
-}
-
-/* Add spacing to push content below fixed header */
-body > section {
-  padding-top: 100px;
-}
-
-/* News Section */
-.news-section {
-  padding: 40px 20px;
-}
-
-.news-carousel {
-  display: flex;
-  align-items: center;
-  overflow-x: auto;
-  gap: 20px;
-}
-
-.news-item {
-  background-color: #fff;
-  padding: 20px;
-  border: 2px solid #3e1f0d;
-  min-width: 250px;
-  flex-shrink: 0;
-  border-radius: 8px;
-}
-
-.arrow {
-  font-size: 20px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-/* Games Section */
-.games-section {
-  padding: 40px 20px;
-}
-
-.game-cards {
+.site-header {
+  background-color: #2d1e12;
+  color: #f0f0f0;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.logo-nav-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.main-nav a {
+  font-weight: 600;
+}
+
+.news-section,
+.games-section {
+  padding: 40px 20px;
+  background-color: #1e1e1e;
+}
+
+h2 {
+  font-size: 1.8em;
+  color: #f9c85b;
+  margin-bottom: 20px;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  overflow-x: auto;
+}
+
+.carousel-items {
+  display: flex;
   gap: 20px;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.news-card {
+  background-color: #2d2d2d;
+  padding: 20px;
+  border-radius: 10px;
+  width: 250px;
+  flex-shrink: 0;
+}
+
+.news-card h3 {
+  margin-top: 0;
+  color: #f9c85b;
+}
+
+button {
+  margin-top: 10px;
+  background-color: #e6c679;
+  border: none;
+  padding: 8px 14px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  color: #2d1e12;
+}
+
+.carousel-btn {
+  font-size: 20px;
+  padding: 8px 12px;
+  background-color: #2d1e12;
+  color: #e6c679;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.games-section .game-cards {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .game-card {
-  background-color: #fff;
-  border: 2px solid #3e1f0d;
+  background-color: #2d2d2d;
+  width: 30%;
+  min-width: 200px;
   padding: 20px;
-  flex: 1;
+  border: 1px solid #3a2a1a;
+  border-radius: 10px;
   text-align: center;
-  border-radius: 8px;
-  transition: transform 0.2s ease;
 }
 
-.game-card:hover {
-  transform: scale(1.02);
+.game-card h3 {
+  color: #f9c85b;
+  margin-top: 0;
 }
 
-/* Footer */
-footer {
-  background-color: #ffc845;
-  padding: 30px 20px;
-  margin-top: 60px;
+.site-footer {
+  background-color: #2d1e12;
+  color: #f0f0f0;
+  padding: 30px 20px 10px;
 }
 
-.footer-content {
+.footer-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
 }
 
-.footer-nav {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  padding: 0;
-}
-
 .footer-nav a {
-  text-decoration: none;
-  color: #3e1f0d;
-  font-weight: bold;
+  margin: 0 10px;
+  font-weight: 600;
 }
 
 .contact {
   margin-top: 10px;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 0.8em;
+  margin-top: 20px;
+  color: #ccc;
 }

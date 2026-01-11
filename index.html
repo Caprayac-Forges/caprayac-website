@@ -2,97 +2,90 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Caprayac Forges</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
-
   <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
 </head>
-
 <body>
-
   <!-- Header -->
   <header class="site-header">
-    <div class="header-content">
-      <img src="assets/icons/LogoTransparent.png" alt="Caprayac Logo" class="logo"/>
-      <nav class="nav-links">
-        <a href="#">Home</a>
-        <a href="#">Games</a>
-        <a href="#">News</a>
-        <a href="#">About</a>
+    <div class="logo-nav-container">
+      <img src="assets/icons/LogoTransparent.png" alt="Caprayac Logo" class="logo" />
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="games.html">Games</a>
+        <a href="news.html">News</a>
+        <a href="about.html">About</a>
       </nav>
     </div>
   </header>
 
   <!-- News Section -->
-  <section class="news-preview">
+  <section class="news-section">
     <h2>What's New?</h2>
-    <div class="news-carousel">
-      <button class="carousel-arrow" id="prev">&#8592;</button>
-
-      <div class="news-card">
-        <h3>Big Update</h3>
-        <p>We’ve been hard at work on our newest project...</p>
-        <button class="learn-more">Learn More</button>
+    <div class="carousel">
+      <button class="carousel-btn">←</button>
+      <div class="carousel-items">
+        <div class="news-card">
+          <h3>Big Update</h3>
+          <p>We’ve been hard at work on our newest project...</p>
+          <button>Learn More</button>
+        </div>
+        <div class="news-card">
+          <h3>Behind the Scenes</h3>
+          <p>A peek into...</p>
+          <button>Learn More</button>
+        </div>
+        <div class="news-card">
+          <h3>Caprayac Creation</h3>
+          <p>Welcome to Caprayac!</p>
+          <button>Learn More</button>
+        </div>
       </div>
-
-      <div class="news-card">
-        <h3>Behind the Scenes</h3>
-        <p>A peek into...</p>
-        <button class="learn-more">Learn More</button>
-      </div>
-
-      <div class="news-card">
-        <h3>Caprayac Creation</h3>
-        <p>Welcome to Caprayac!</p>
-        <button class="learn-more">Learn More</button>
-      </div>
-
-      <button class="carousel-arrow" id="next">&#8594;</button>
+      <button class="carousel-btn">→</button>
     </div>
   </section>
 
   <!-- Games Section -->
   <section class="games-section">
     <h2>Our Games</h2>
-    <div class="games-grid">
+    <div class="game-cards">
       <div class="game-card">
         <h3>Project 1</h3>
         <p>Brief description of Project 1.</p>
-        <button class="learn-more">Learn More</button>
+        <button>Learn More</button>
       </div>
       <div class="game-card">
         <h3>Project 2</h3>
         <p>Brief description of Project 2.</p>
-        <button class="learn-more">Learn More</button>
+        <button>Learn More</button>
       </div>
       <div class="game-card">
         <h3>Project 3</h3>
         <p>Brief description of Project 3.</p>
-        <button class="learn-more">Learn More</button>
+        <button>Learn More</button>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="site-footer">
-    <div class="footer-content">
-      <img src="Logo.png" alt="Caprayac Logo" class="logo" />
-      <nav class="nav-links">
-        <a href="#">Home</a>
-        <a href="#">Games</a>
-        <a href="#">News</a>
-        <a href="#">About</a>
+    <div class="footer-top">
+      <img src="assets/icons/LogoTransparent.png" alt="Caprayac Logo" class="logo"/>
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="games.html">Games</a>
+        <a href="news.html">News</a>
+        <a href="about.html">About</a>
       </nav>
-      <div class="contact-info">
-        <p>Contact Us: hello@caprayac.net</p>
+      <div class="contact">
+        Contact Us: <a href="mailto:hello@caprayac.net">hello@caprayac.net</a>
       </div>
     </div>
-    <div class="copyright">
+    <div class="footer-bottom">
       <p>© 2026 Caprayac Forges. All rights reserved.</p>
     </div>
   </footer>
-
 </body>
 </html>
