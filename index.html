@@ -4,49 +4,43 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Caprayac Forges</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="Logo.png" type="image/png"/>
 </head>
 <body>
 
   <!-- HEADER -->
   <header>
-    <div class="header-container">
-      <img src="Logo.png" alt="Caprayac Logo" class="logo"/>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Games</a></li>
-          <li><a href="#">News</a></li>
-          <li><a href="#">About</a></li>
-        </ul>
-      </nav>
-    </div>
+    <img src="Logo.png" alt="Caprayac Logo" class="logo" />
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Games</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </nav>
   </header>
 
   <!-- NEWS SECTION -->
   <section class="news-section">
     <h2>What's New?</h2>
-    <div class="carousel">
-      <button class="arrow left">&#8592;</button>
-      <div class="carousel-track">
-        <div class="news-card">
-          <h3>Big Update</h3>
-          <p>We’ve been hard at work on our newest project...</p>
-          <a href="#" class="btn">Learn More</a>
-        </div>
-        <div class="news-card">
-          <h3>Behind the Scenes</h3>
-          <p>A peek into our art pipeline and tools...</p>
-          <a href="#" class="btn">Learn More</a>
-        </div>
-        <div class="news-card">
-          <h3>New Team Member</h3>
-          <p>Welcome our new narrative designer to Caprayac!</p>
-          <a href="#" class="btn">Learn More</a>
-        </div>
+    <div class="news-carousel">
+      <div class="news-item">
+        <h3>Big Update</h3>
+        <p>We’ve been hard at work on our newest project...</p>
+        <button>Learn More</button>
       </div>
-      <button class="arrow right">&#8594;</button>
+      <div class="news-item">
+        <h3>Behind the Scenes</h3>
+        <p>A peek into our art pipeline and tools...</p>
+        <button>Learn More</button>
+      </div>
+      <div class="news-item">
+        <h3>New Team Member</h3>
+        <p>Welcome our new narrative designer to Caprayac!</p>
+        <button>Learn More</button>
+      </div>
     </div>
   </section>
 
@@ -55,24 +49,24 @@
     <h2>Our Games</h2>
     <div class="games-grid">
       <div class="game-card">
-        <div class="game-hover">
-          <h3>Project 1</h3>
+        <div class="hover-info">
+          <h4>Project 1</h4>
           <p>Brief description of Project 1.</p>
-          <a href="#" class="btn">Learn More</a>
+          <button>Learn More</button>
         </div>
       </div>
       <div class="game-card">
-        <div class="game-hover">
-          <h3>Project 2</h3>
+        <div class="hover-info">
+          <h4>Project 2</h4>
           <p>Brief description of Project 2.</p>
-          <a href="#" class="btn">Learn More</a>
+          <button>Learn More</button>
         </div>
       </div>
       <div class="game-card">
-        <div class="game-hover">
-          <h3>Project 3</h3>
+        <div class="hover-info">
+          <h4>Project 3</h4>
           <p>Brief description of Project 3.</p>
-          <a href="#" class="btn">Learn More</a>
+          <button>Learn More</button>
         </div>
       </div>
     </div>
@@ -80,21 +74,15 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-content">
-      <img src="BannerTransparent(1).png" alt="Caprayac Logo" class="footer-logo"/>
-      <ul class="footer-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Games</a></li>
-        <li><a href="#">News</a></li>
-        <li><a href="#">About</a></li>
-      </ul>
-      <div class="contact">
-        <p>Contact Us: hello@caprayac.net</p>
-      </div>
-    </div>
-    <div class="copyright">
-      &copy; 2026 Caprayac Forges. All rights reserved.
-    </div>
+    <img src="Logo.png" alt="Caprayac Logo" class="logo"/>
+    <ul class="footer-nav">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Games</a></li>
+      <li><a href="#">News</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+    <div class="contact">Contact Us: hello@caprayac.net</div>
+    <div class="copyright">© 2026 Caprayac Forges. All rights reserved.</div>
   </footer>
 
 </body>
