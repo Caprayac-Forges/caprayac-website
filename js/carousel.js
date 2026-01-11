@@ -1,27 +1,38 @@
 let currentIndex = 0;
-const items = document.querySelectorAll(".carousel-item");
+const cards = document.querySelectorAll(".carousel-card");
+const track = document.querySelector(".carousel-track");
+const prevBtn = document.querySelector(".carousel-btn.prev");
+const nextBtn = document.querySelector(".carousel-btn.next");
 
-function showItem(index) {
-  items.forEach((item, i) => {
-    item.classList.toggle("active", i === index);
+function updateCarousel() {
+  cards.forEach((card, index) => {
+    card.classList.remove("active");
+    if (index === currentIndex) {
+      card.classList.add("active");
+    }
   });
+
+  const cardWidth = cards[0].offsetWidth + 20; // card width + margin
+  const offset = (track.offsetWidth - cardWidth) / 2 - currentIndex * cardWidth;
+  track.style.transform = `translateX(${offset}px)`;
 }
 
-function nextItem() {
-  currentIndex = (currentIndex + 1) % items.length;
-  showItem(currentIndex);
+function showNextCard() {
+  currentIndex = (currentIndex + 1) % cards.length;
+  updateCarousel();
 }
 
-function prevItem() {
-  currentIndex = (currentIndex - 1 + items.length) % items.length;
-  showItem(currentIndex);
+function showPrevCard() {
+  currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+  updateCarousel();
 }
 
-document.querySelector(".carousel-btn.right").addEventListener("click", nextItem);
-document.querySelector(".carousel-btn.left").addEventListener("click", prevItem);
+prevBtn.addEventListener("click", showPrevCard);
+nextBtn.addEventListener("click", showNextCard);
 
-// Auto scroll
-setInterval(nextItem, 5000);
+setInterval(() => {
+  showNextCard();
+}, 5000);
 
-// Initial display
-showItem(currentIndex);
+window.addEventListener("resize", updateCarousel);
+updateCarousel();
