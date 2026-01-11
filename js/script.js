@@ -1,36 +1,31 @@
 const track = document.querySelector('.carousel-track');
-const items = document.querySelectorAll('.carousel-item');
-const nextBtn = document.querySelector('.carousel-btn.right');
-const prevBtn = document.querySelector('.carousel-btn.left');
+const cards = Array.from(track.children);
+const prevBtn = document.querySelector('.carousel-btn.prev');
+const nextBtn = document.querySelector('.carousel-btn.next');
+let currentIndex = 0;
 
-let index = 1; // center on second item by default
+function updateCarousel(index) {
+  cards.forEach(card => card.classList.remove('active'));
+  cards[index].classList.add('active');
 
-function updateCarousel() {
-  const itemWidth = items[0].offsetWidth + 20;
-  const visibleCount = 3;
-  const offset = (itemWidth * index) - (itemWidth * Math.floor(visibleCount / 2));
+  const offset = cards[index].offsetLeft - (track.offsetWidth / 2) + (cards[index].offsetWidth / 2);
   track.style.transform = `translateX(-${offset}px)`;
-
-  items.forEach((item, i) => {
-    item.classList.toggle('active', i === index);
-  });
 }
 
-nextBtn.addEventListener('click', () => {
-  index = (index + 1) % items.length;
-  updateCarousel();
-});
-
 prevBtn.addEventListener('click', () => {
-  index = (index - 1 + items.length) % items.length;
-  updateCarousel();
+  currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+  updateCarousel(currentIndex);
 });
 
-// Auto-scroll
+nextBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % cards.length;
+  updateCarousel(currentIndex);
+});
+
 setInterval(() => {
-  index = (index + 1) % items.length;
-  updateCarousel();
-}, 3500);
+  currentIndex = (currentIndex + 1) % cards.length;
+  updateCarousel(currentIndex);
+}, 5000); // Auto-scroll every 5 seconds
 
 // Initialize
-updateCarousel();
+updateCarousel(currentIndex);
