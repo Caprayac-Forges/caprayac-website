@@ -4,29 +4,30 @@ let currentIndex = 0;
 function updateCarousel() {
   cards.forEach((card, index) => {
     card.classList.remove('active');
-    if (index === currentIndex) {
-      card.classList.add('active');
-    }
+    card.style.transform = 'scale(1)';
   });
+
+  const current = cards[currentIndex];
+  current.classList.add('active');
 }
 
-function nextCard() {
+function nextSlide() {
   currentIndex = (currentIndex + 1) % cards.length;
   updateCarousel();
 }
 
-function prevCard() {
+function prevSlide() {
   currentIndex = (currentIndex - 1 + cards.length) % cards.length;
   updateCarousel();
 }
 
-// Auto-loop every 5 seconds
-setInterval(nextCard, 5000);
+document.getElementById('carousel-next').addEventListener('click', nextSlide);
+document.getElementById('carousel-prev').addEventListener('click', prevSlide);
 
-// Manual controls
-document.getElementById('carousel-next').addEventListener('click', nextCard);
-document.getElementById('carousel-prev').addEventListener('click', prevCard);
+// Auto-scroll every 5 seconds
+setInterval(() => {
+  nextSlide();
+}, 5000);
 
-// Initial setup
+// Initialize
 updateCarousel();
-
