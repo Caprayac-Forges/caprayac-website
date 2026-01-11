@@ -1,167 +1,187 @@
+/* Font and base reset */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
+
 body {
-  margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  background-color: #2d0f0b;
-  color: #ffe08a;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fff8e1;
+    color: #3e1f0d;
 }
 
+a {
+    text-decoration: none;
+    color: #3e1f0d;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Header */
 header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: #2d0f0b;
-  z-index: 1000;
-  padding: 10px 30px;
-  display: flex;
-  align-items: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.4);
-}
-
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f3c654;
+    padding: 10px 40px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
-  height: 60px;
+    height: 50px;
 }
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
 }
 
-.nav-links a {
-  text-decoration: none;
-  color: #ffe08a;
-  font-weight: bold;
+nav ul li {
+    font-weight: 600;
+    font-size: 18px;
 }
 
+/* Section Spacing */
 section {
-  padding: 100px 40px 60px;
+    padding: 100px 40px 60px; /* Top padding accounts for fixed header */
 }
 
-h2 {
-  text-align: center;
-  margin-bottom: 30px;
+/* News Section */
+.news-section {
+    background-color: #fff3d1;
 }
 
-/* --- Carousel --- */
-
-.carousel {
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  max-width: 100%;
+.news-carousel {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
 }
 
-.carousel-track {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
+.news-item {
+    flex: 0 0 300px;
+    background-color: #fff;
+    border: 2px solid #3e1f0d;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px 0;
 }
 
-.news-card {
-  min-width: 300px;
-  background-color: #3d1c16;
-  padding: 20px;
-  border-radius: 12px;
-  flex-shrink: 0;
+.news-item h3 {
+    margin-top: 0;
+    font-weight: 700;
+    font-size: 20px;
 }
 
-.arrow {
-  background: none;
-  color: #ffe08a;
-  font-size: 24px;
-  border: none;
-  cursor: pointer;
+.news-item button {
+    margin-top: 10px;
+    background-color: #3e1f0d;
+    color: #f3c654;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
-/* --- Game Cards --- */
+/* Games Section */
+.games-section {
+    background-color: #fff8e1;
+}
 
 .games-grid {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .game-card {
-  width: 250px;
-  height: 350px;
-  background-color: #4d1f16;
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
+    position: relative;
+    width: 30%;
+    height: 300px;
+    background-color: #fff;
+    border: 2px solid #3e1f0d;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s;
 }
 
-.game-hover {
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  padding: 20px;
+.game-card:hover {
+    transform: translateY(-5px);
 }
 
-.game-card:hover .game-hover {
-  opacity: 1;
-  background-color: rgba(0, 0, 0, 0.6);
-  height: 100%;
-  color: #ffe08a;
+.game-card .hover-info {
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(62, 31, 13, 0.85);
+    color: white;
+    padding: 20px;
+    width: 100%;
+    transform: translateY(100%);
+    transition: transform 0.3s;
 }
 
-/* --- Buttons --- */
-
-.btn {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 8px 14px;
-  background-color: #f6b637;
-  color: #2d0f0b;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 6px;
+.game-card:hover .hover-info {
+    transform: translateY(0);
 }
 
-/* --- Footer --- */
+.hover-info h4 {
+    margin: 0;
+}
 
+.hover-info button {
+    margin-top: 10px;
+    background-color: #f3c654;
+    color: #3e1f0d;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Footer */
 footer {
-  background-color: #2d0f0b;
-  padding: 40px 30px 10px;
-  color: #ffe08a;
+    background-color: #3e1f0d;
+    color: #fff8e1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  border-top: 2px solid #3d1c16;
-  padding-top: 20px;
+footer .footer-nav {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    padding: 0;
 }
 
-.footer-logo {
-  height: 50px;
+footer .footer-nav li a {
+    color: #fff8e1;
+    font-weight: 600;
 }
 
-.footer-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
+footer .contact {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #f7eac5;
 }
 
-.footer-links a {
-  color: #ffe08a;
-  text-decoration: none;
+footer img {
+    height: 40px;
 }
 
-.contact {
-  margin-top: 10px;
-}
-
-copyright {
-  text-align: center;
-  font-size: 0.8em;
-  padding: 10px;
+footer .copyright {
+    font-size: 12px;
+    color: #d6bc84;
 }
