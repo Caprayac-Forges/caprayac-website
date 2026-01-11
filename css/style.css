@@ -1,3 +1,4 @@
+/* Base Styles */
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
@@ -5,143 +6,145 @@ body {
   color: #fff;
 }
 
-header {
-  background-color: #2e1300;
+h2 {
+  color: gold;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Header */
+.top-header {
+  background-color: #2a0e00;
+  padding: 10px 0;
+}
+
+.top-header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  position: sticky;
-  top: 0;
-  z-index: 999;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-nav a {
-  color: #ffc93c;
+.nav a {
   margin-left: 20px;
+  color: gold;
   text-decoration: none;
 }
 
-main {
-  max-width: 1200px;
-  margin: auto;
-  padding: 2rem;
-  min-height: 120vh;
-}
-
+/* Carousel */
 .carousel-section {
-  text-align: center;
-  margin-bottom: 5rem;
+  padding: 60px 0;
 }
 
 .carousel-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-  overflow: hidden;
+  gap: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
 }
 
 .carousel-track {
   display: flex;
-  gap: 1.5rem;
-  transition: transform 0.5s ease-in-out;
+  overflow: hidden;
+  width: 100%;
+  max-width: 900px;
+  height: 250px;
 }
 
-.carousel-card {
-  background: #2b2b2b;
-  padding: 1.5rem;
-  min-width: 280px;
-  height: 220px;
-  border-radius: 0.5rem;
-  box-shadow: 0 0 0 transparent;
-  transition: box-shadow 0.3s;
+.carousel-item {
+  min-width: 300px;
+  margin: 0 10px;
+  background: #222;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  flex-shrink: 0;
+  opacity: 0.5;
+  transition: all 0.3s ease;
 }
 
-.carousel-card.active {
-  box-shadow: 0 0 0 4px #ffc93c;
+.carousel-item.active {
+  border: 2px solid gold;
+  opacity: 1;
 }
 
 .carousel-btn {
-  background: #2e1300;
-  color: #fff;
+  background-color: #2a0e00;
+  color: gold;
   border: none;
-  padding: 0.5rem 1rem;
+  font-size: 24px;
+  padding: 10px;
   cursor: pointer;
 }
 
+/* Games Section */
 .games-section {
-  text-align: center;
-  margin-bottom: 5rem;
+  padding: 60px 20px;
+  background-color: #111;
+  min-height: 600px;
 }
 
 .games-grid {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 40px;
   flex-wrap: wrap;
-  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .game-card {
-  background: #2b2b2b;
-  padding: 1.5rem;
-  width: 240px;
-  height: 380px;
-  border-radius: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  background: #2a2a2a;
+  padding: 20px;
+  width: 250px;
+  border-radius: 10px;
+  text-align: center;
 }
 
-.game-cover {
-  background: #1e1e1e;
-  width: 100%;
+.game-image {
   height: 200px;
+  background: #1a1a1a;
+  border-radius: 8px;
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ccc;
-  margin-bottom: 1rem;
 }
 
-button {
-  background-color: #ffc93c;
+/* Buttons */
+.learn-btn {
+  background: gold;
   border: none;
-  padding: 0.4rem 0.8rem;
+  padding: 8px 12px;
   cursor: pointer;
-  font-weight: bold;
-  border-radius: 3px;
+  border-radius: 4px;
+  color: #000;
 }
 
-.footer-banner {
-  background-color: #2e1300;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  flex-wrap: wrap;
+/* Footer */
+.footer {
+  background-color: #2a0e00;
+  padding: 40px 0;
+  color: #fff;
 }
 
-.footer-nav a {
-  color: #ffc93c;
-  margin-right: 20px;
+.footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer .nav a {
+  margin: 0 15px;
+  color: gold;
   text-decoration: none;
 }
 
-.footer-contact {
-  color: #ffc93c;
-  font-size: 0.9rem;
-}
-
-footer {
-  background: #2e1300;
-}
-
-footer p {
-  text-align: center;
-  color: #aaa;
-  font-size: 0.8rem;
-  margin: 0.5rem 0;
+.footer .contact {
+  margin-top: 10px;
 }

@@ -1,88 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Caprayac Forges</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css"/>
 </head>
-
 <body>
-  <header>
-    <div class="logo"><img src="Logo.png" alt="Caprayac Logo" class="logo" /></div>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#games">Games</a>
-      <a href="#news">News</a>
-      <a href="#about">About</a>
-    </nav>
+  <!-- Top Header -->
+  <header class="top-header">
+    <div class="container">
+      <img src="Logo.png" alt="Caprayac Logo" class="logo"/>
+      <nav class="nav">
+        <a href="#">Home</a>
+        <a href="#">Games</a>
+        <a href="#">News</a>
+        <a href="#">About</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section class="carousel-section">
-      <h2>What's New?</h2>
-      <div class="carousel-container">
-        <button class="carousel-btn prev">&#8592;</button>
-        <div class="carousel-track">
-          <div class="carousel-card">
-            <h3>Big Update</h3>
-            <p>We've been hard at work on our newest project...</p>
-            <button>Learn More</button>
-          </div>
-          <div class="carousel-card">
-            <h3>Behind the Scenes</h3>
-            <p>A peek into our art pipeline and tools...</p>
-            <button>Learn More</button>
-          </div>
-          <div class="carousel-card">
-            <h3>Caprayac Creation</h3>
-            <p>Welcome to Caprayac!</p>
-            <button>Learn More</button>
-          </div>
+  <!-- Carousel Section -->
+  <section class="carousel-section">
+    <h2>What's New?</h2>
+    <div class="carousel-container">
+      <button class="carousel-btn left">&#8592;</button>
+      <div class="carousel-track">
+        <div class="carousel-item active">
+          <h3>Big Update</h3>
+          <p>We've been hard at work on our newest project...</p>
+          <button class="learn-btn">Learn More</button>
         </div>
-        <button class="carousel-btn next">&#8594;</button>
-      </div>
-    </section>
-
-    <section class="games-section" id="games">
-      <h2>Our Games</h2>
-      <div class="games-grid">
-        <div class="game-card">
-          <div class="game-cover">Project 1</div>
-          <p>Brief description of Project 1.</p>
-          <button>Learn More</button>
+        <div class="carousel-item">
+          <h3>Behind the Scenes</h3>
+          <p>A peek into our art pipeline and tools...</p>
+          <button class="learn-btn">Learn More</button>
         </div>
-        <div class="game-card">
-          <div class="game-cover">Project 2</div>
-          <p>Brief description of Project 2.</p>
-          <button>Learn More</button>
-        </div>
-        <div class="game-card">
-          <div class="game-cover">Project 3</div>
-          <p>Brief description of Project 3.</p>
-          <button>Learn More</button>
+        <div class="carousel-item">
+          <h3>Caprayac Creation</h3>
+          <p>Welcome to Caprayac!</p>
+          <button class="learn-btn">Learn More</button>
         </div>
       </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="footer-banner">
-      <div class="footer-left">Caprayac Logo</div>
-      <div class="footer-nav">
-        <a href="#">Home</a>
-        <a href="#games">Games</a>
-        <a href="#news">News</a>
-        <a href="#about">About</a>
-      </div>
-      <div class="footer-contact">Contact Us: <a href="mailto:hello@caprayac.net">hello@caprayac.net</a></div>
+      <button class="carousel-btn right">&#8594;</button>
     </div>
-    <p class="copyright">&copy; 2026 Caprayac Forges. All rights reserved.</p>
+  </section>
+
+  <!-- Games Section -->
+  <section class="games-section">
+    <h2>Our Games</h2>
+    <div class="games-grid">
+      <div class="game-card">
+        <div class="game-image">Project 1</div>
+        <p>Brief description of Project 1.</p>
+        <button class="learn-btn">Learn More</button>
+      </div>
+      <div class="game-card">
+        <div class="game-image">Project 2</div>
+        <p>Brief description of Project 2.</p>
+        <button class="learn-btn">Learn More</button>
+      </div>
+      <div class="game-card">
+        <div class="game-image">Project 3</div>
+        <p>Brief description of Project 3.</p>
+        <button class="learn-btn">Learn More</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <img src="Logo.png" alt="Caprayac Logo" class="logo"/>
+      <nav class="nav">
+        <a href="#">Home</a>
+        <a href="#">Games</a>
+        <a href="#">News</a>
+        <a href="#">About</a>
+      </nav>
+      <div class="contact">
+        <p>Contact Us: <a href="mailto:hello@caprayac.net">hello@caprayac.net</a></p>
+        <p>© 2026 Caprayac Forges. All rights reserved.</p>
+      </div>
+    </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="carousel.js"></script>
 </body>
-
 </html>
