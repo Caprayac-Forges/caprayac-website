@@ -1,68 +1,64 @@
-/* Font and Color */
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
-  background-color: #341916;
-  color: #fff8e1;
+  background-color: #2d0f0b;
+  color: #ffe08a;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* Header */
 header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #f1b73f;
-  padding: 10px 20px;
   position: fixed;
   top: 0;
   width: 100%;
+  background-color: #2d0f0b;
   z-index: 1000;
+  padding: 10px 30px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .logo {
   height: 60px;
-  width: 60px;
 }
 
-nav {
+.nav-links {
+  list-style: none;
   display: flex;
   gap: 20px;
 }
 
-nav a {
-  font-weight:600;
-  color: #341916
+.nav-links a {
+  text-decoration: none;
+  color: #ffe08a;
+  font-weight: bold;
 }
 
-/*News Section*/
-.news-preview {
-  margin-top: 100px;
-  padding: 40px 20px;
-  background-color: #47201a;
-  text-align:center;
+section {
+  padding: 100px 40px 60px;
 }
 
-.news-slider {
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* --- Carousel --- */
+
+.carousel {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 20px;
+  overflow: hidden;
+  max-width: 100%;
 }
 
-.nav-arrow {
-  font-size: 24px;
-  background: none;
-  border: none;
-  color: #f1b73f;
-  cursor: pointer;
-}
-
-.news-items {
+.carousel-track {
   display: flex;
   gap: 20px;
   overflow-x: auto;
@@ -70,106 +66,102 @@ nav a {
 }
 
 .news-card {
-  background-color: #341916;
-  border: 2px solid #f1b73f;
-  border-radius: 10px;
+  min-width: 300px;
+  background-color: #3d1c16;
   padding: 20px;
-  min-width: 250px;
+  border-radius: 12px;
+  flex-shrink: 0;
 }
 
-.news-card button {
-  margin-top: 10px;
-  background-color: #f1b73f;
+.arrow {
+  background: none;
+  color: #ffe08a;
+  font-size: 24px;
   border: none;
-  color: #341916;
-  padding: 8px 12px;
-  font-weight: 600;
   cursor: pointer;
 }
 
-/*Games Preview Section*/
-.games-preview {
-  padding: 40px 20px;
-  background-color: #341916;
-  text-align:center;
-}
+/* --- Game Cards --- */
 
-.games-row {
+.games-grid {
   display: flex;
   gap: 20px;
   justify-content: center;
 }
 
-.games-card {
-  background-color: #47201a;
-  width: 200px;
-  height: 300px;
+.game-card {
+  width: 250px;
+  height: 350px;
+  background-color: #4d1f16;
   position: relative;
-  border-radius: 10px;
   overflow: hidden;
+  border-radius: 12px;
 }
 
-.hover-overlay {
-  position: absolute;
-  inset: 0;
-  background-color: rgba(241, 183, 63, 0.9);
-  color: #341916;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.game-hover {
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity 0.3s ease;
+  padding: 20px;
 }
 
-.game-card:hover .hover-overlay {
+.game-card:hover .game-hover {
   opacity: 1;
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  color: #ffe08a;
 }
 
-.hover-overlay button {
-  background-color: #341916;
-  border: none;
-  color: #f1b73f;
-  padding: 8px 12px;
-  font-weight: 600;
+/* --- Buttons --- */
+
+.btn {
+  display: inline-block;
   margin-top: 10px;
-  cursor: pointer;
+  padding: 8px 14px;
+  background-color: #f6b637;
+  color: #2d0f0b;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
 }
 
-/*Footer*/
+/* --- Footer --- */
+
 footer {
-  background-color: #f1b73f;
-  color: #341916;
-  padding: 30px 20px 10px;
-  margin-top: 40px;
+  background-color: #2d0f0b;
+  padding: 40px 30px 10px;
+  color: #ffe08a;
 }
 
-.footer-top {
+.footer-content {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  border-top: 2px solid #3d1c16;
+  padding-top: 20px;
 }
 
-footer nav {
+.footer-logo {
+  height: 50px;
+}
+
+.footer-links {
+  list-style: none;
   display: flex;
-  gap: 15px;
+  gap: 20px;
+}
+
+.footer-links a {
+  color: #ffe08a;
+  text-decoration: none;
 }
 
 .contact {
   margin-top: 10px;
 }
 
-.contact h4 {
-  margin: 0;
-}
-
-footer .logo {
-  height: 50px;
-}
-
-footer p {
+copyright {
   text-align: center;
-  font-size: 0.9em;
-  margin-top: 20px;
+  font-size: 0.8em;
+  padding: 10px;
 }

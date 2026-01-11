@@ -1,78 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content = "width=device-width, initial-scale=1.0"/>
-        <title>Caprayac Forges</title>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
-    </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Caprayac Forges</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
 <body>
 
-    <!--Header-->
-    <header>
-        <div class="logo">
-            <img src="assets/LogoTransparent.png" alt="Caprayac Logo"/>
-        </div>
+  <!-- HEADER -->
+  <header>
+    <div class="header-container">
+      <img src="BannerTransparent(1).png" alt="Caprayac Logo" class="logo"/>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Games</a></li>
+          <li><a href="#">News</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">Games</a>
-            <a href="#">News</a>
-            <a href="#">About</a>
-        </nav>
-    </header>
-
-    <!--News Slider-->
-    <section class = "news-slider">
-        <h2>What's New?</h2>
-        <div class="news-slider">
-            <button class="nav-arrow left">&lt;</button>
-            <div class="news-items">
-                <div class = "news-card">
-                    <div class = "news-logo"> </div>
-                    <h3>Game Update</h3>
-                    <p> Our latest game, to be released later this year!</p>
-                    <button>Read More</button>
-                </div>
-            </div>
-            <button class="nav-arrow right">&gt;</button>
+  <!-- NEWS SECTION -->
+  <section class="news-section">
+    <h2>What's New?</h2>
+    <div class="carousel">
+      <button class="arrow left">&#8592;</button>
+      <div class="carousel-track">
+        <div class="news-card">
+          <h3>Big Update</h3>
+          <p>We’ve been hard at work on our newest project...</p>
+          <a href="#" class="btn">Learn More</a>
         </div>
-    </section>
-
-    <!--Games Preview-->
-    <section class = "games-preview">
-        <h2>Our Games</h2>
-        <div class = "games-row">
-            <div class = "game-card">
-                <div class = "hover-overlay">
-                    <h3>Project 1</h3>
-                    <p>Brief description of Project 1.</p>
-                </div>
-            </div>
-            <div class = "game-card">
-                <div class = "hover-overlay">
-                    <h3>Project 2</h3>
-                    <p>Brief description of Project 2.</p>
-                </div>
-            </div>
+        <div class="news-card">
+          <h3>Behind the Scenes</h3>
+          <p>A peek into our art pipeline and tools...</p>
+          <a href="#" class="btn">Learn More</a>
         </div>
-    </section>
-
-    <!--Footer-->
-    <footer>
-        <div class = "footer-top">
-            <img src = "assets/Banner Transparent.png" alt = "Caprayac Banner"/>
-            <nav>
-                <a href="#">Home</a>
-                <a href="#">Games</a>
-                <a href="#">News</a>
-                <a href="#">About</a>
-            </nav>
-            <div class="contact-info">
-                <h4>Contact Us</h4>
+        <div class="news-card">
+          <h3>New Team Member</h3>
+          <p>Welcome our new narrative designer to Caprayac!</p>
+          <a href="#" class="btn">Learn More</a>
         </div>
-        <p>&copy; 2025 Caprayac Forges. All rights reserved.</p>
-    </footer>
+      </div>
+      <button class="arrow right">&#8594;</button>
+    </div>
+  </section>
+
+  <!-- GAMES SECTION -->
+  <section class="games-section">
+    <h2>Our Games</h2>
+    <div class="games-grid">
+      <div class="game-card">
+        <div class="game-hover">
+          <h3>Project 1</h3>
+          <p>Brief description of Project 1.</p>
+          <a href="#" class="btn">Learn More</a>
+        </div>
+      </div>
+      <div class="game-card">
+        <div class="game-hover">
+          <h3>Project 2</h3>
+          <p>Brief description of Project 2.</p>
+          <a href="#" class="btn">Learn More</a>
+        </div>
+      </div>
+      <div class="game-card">
+        <div class="game-hover">
+          <h3>Project 3</h3>
+          <p>Brief description of Project 3.</p>
+          <a href="#" class="btn">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <img src="BannerTransparent(1).png" alt="Caprayac Logo" class="footer-logo"/>
+      <ul class="footer-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Games</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+      <div class="contact">
+        <p>Contact Us: hello@caprayac.net</p>
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; 2026 Caprayac Forges. All rights reserved.
+    </div>
+  </footer>
+
 </body>
 </html>
