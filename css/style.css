@@ -1,157 +1,156 @@
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
-  background-color: #111;
-  color: #f0f0f0;
+  background-color: #121212;
+  color: #f2f2f2;
 }
 
-a {
-  color: #f5c74e;
-  text-decoration: none;
-}
-
-h2 {
-  color: #f5c74e;
-  margin-bottom: 1rem;
-}
-
-/* Header */
-.site-header {
+.header {
+  background-color: #2d1200;
+  color: #f2f2f2;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #2a1201;
-  color: white;
-  padding: 1rem 2rem;
+  padding: 10px 30px;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 1000;
 }
 
 .logo {
   height: 40px;
 }
 
-.nav-links a {
-  margin-left: 1.5rem;
-  font-weight: bold;
+.nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #f2c744;
+  font-weight: 500;
 }
 
-/* Carousel */
-.carousel-section {
-  padding: 3rem 2rem;
+.content {
+  padding: 60px 50px;
+}
+
+h2 {
+  color: #f2c744;
   text-align: center;
+  margin-bottom: 30px;
 }
 
 .carousel-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
   overflow: hidden;
   position: relative;
+  height: 260px;
+  margin-bottom: 80px;
 }
 
-.carousel {
+.carousel-track {
   display: flex;
+  gap: 20px;
   transition: transform 0.5s ease-in-out;
 }
 
 .carousel-item {
-  background-color: #222;
-  padding: 2rem;
+  background-color: #2d2d2d;
+  padding: 20px;
   border-radius: 10px;
-  min-width: 300px;
-  max-width: 400px;
-  margin: 0 1rem;
-  transform: scale(0.8);
-  opacity: 0.6;
-  transition: all 0.4s ease;
+  width: 300px;
+  text-align: center;
+  flex-shrink: 0;
 }
 
-.carousel-item.active {
-  transform: scale(1.1);
-  opacity: 1;
+.carousel-item button {
+  background-color: #f2c744;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  margin-top: 10px;
 }
 
 .carousel-btn {
-  background-color: #2a1201;
-  color: #f5c74e;
+  background-color: #2d1200;
   border: none;
-  font-size: 1.5rem;
+  color: #f2f2f2;
+  font-size: 20px;
   cursor: pointer;
-  padding: 1rem;
+  padding: 10px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
 }
 
-/* Games */
-.games-section {
-  padding: 3rem 2rem;
-  text-align: center;
+.carousel-btn.left {
+  left: 0;
 }
 
-.games-grid {
+.carousel-btn.right {
+  right: 0;
+}
+
+.games-container {
   display: flex;
-  gap: 2rem;
   justify-content: center;
+  gap: 40px;
   flex-wrap: wrap;
+  margin-top: 30px;
+  margin-bottom: 120px;
 }
 
 .game-card {
-  background-color: #222;
-  padding: 1rem;
+  background-color: #2d2d2d;
+  padding: 20px;
   border-radius: 10px;
-  width: 200px;
+  width: 220px;
+  text-align: center;
+}
+
+.game-cover {
+  background-color: #1a1a1a;
+  height: 180px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f2f2f2;
+  border-radius: 6px;
+}
+
+.game-card button {
+  background-color: #f2c744;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.footer {
+  background-color: #2d1200;
+  color: #f2f2f2;
+  padding: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.game-cover {
-  background-color: #111;
-  width: 100%;
-  height: 280px;
-  border-radius: 6px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 1rem;
-  color: white;
+.footer-left,
+.footer-center,
+.footer-right {
+  margin: 5px 0;
 }
 
-/* Footer */
-.site-footer {
-  background-color: #2a1201;
-  color: white;
-  padding: 2rem;
-  text-align: center;
-}
-
-.footer-top {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.footer-nav a {
-  margin: 0 1rem;
-}
-
-.footer-contact {
-  margin-top: 1rem;
+.footer-center a {
+  margin: 0 10px;
+  color: #f2c744;
+  text-decoration: none;
 }
 
 .footer-bottom {
-  margin-top: 1rem;
-  font-size: 0.9rem;
-}
-
-.learn-btn {
-  background-color: #f5c74e;
-  border: none;
-  padding: 0.5rem 1rem;
-  margin-top: 1rem;
-  cursor: pointer;
-  font-weight: bold;
-  border-radius: 4px;
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: #ccc;
 }
