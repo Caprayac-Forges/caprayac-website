@@ -1,158 +1,157 @@
-/* Reset and base */
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
-  background-color: #121212;
+  background-color: #111;
   color: #f0f0f0;
 }
 
-/* Top Header */
-.header {
-  position: sticky;
-  top: 0;
-  background-color: #2b1405;
+a {
+  color: #f5c74e;
+  text-decoration: none;
+}
+
+h2 {
+  color: #f5c74e;
+  margin-bottom: 1rem;
+}
+
+/* Header */
+.site-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 24px;
-  z-index: 1000;
+  background-color: #2a1201;
+  color: white;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
-.header .logo {
+.logo {
   height: 40px;
 }
 
-.header nav a {
-  color: #f0c552;
-  margin-left: 20px;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.header nav a:hover {
-  text-decoration: underline;
+.nav-links a {
+  margin-left: 1.5rem;
+  font-weight: bold;
 }
 
 /* Carousel */
 .carousel-section {
-  padding: 48px 0;
-  background-color: #121212;
-  overflow-x: hidden;
+  padding: 3rem 2rem;
+  text-align: center;
 }
 
-.carousel-section h2 {
-  margin-left: 64px;
-  color: #f0c552;
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  overflow: hidden;
+  position: relative;
 }
 
 .carousel {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 32px;
-  transition: transform 0.5s ease;
+  transition: transform 0.5s ease-in-out;
 }
 
-.carousel-card {
-  background-color: #2c2c2c;
-  padding: 24px;
-  border-radius: 8px;
-  text-align: left;
-  width: 320px;
-  min-height: 180px;
-  transition: transform 0.4s ease;
-  flex-shrink: 0;
+.carousel-item {
+  background-color: #222;
+  padding: 2rem;
+  border-radius: 10px;
+  min-width: 300px;
+  max-width: 400px;
+  margin: 0 1rem;
+  transform: scale(0.8);
+  opacity: 0.6;
+  transition: all 0.4s ease;
 }
 
-.carousel-card.active {
-  transform: scale(1.2);
-  z-index: 1;
+.carousel-item.active {
+  transform: scale(1.1);
+  opacity: 1;
 }
 
-.carousel-buttons {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  padding: 0 64px;
-  margin-top: 16px;
-}
-
-.carousel-buttons button {
-  background-color: #2b1405;
-  color: #f0c552;
+.carousel-btn {
+  background-color: #2a1201;
+  color: #f5c74e;
   border: none;
-  padding: 10px;
+  font-size: 1.5rem;
   cursor: pointer;
-  border-radius: 6px;
+  padding: 1rem;
 }
 
-.carousel-buttons button:hover {
-  background-color: #f0c552;
-  color: #2b1405;
-}
-
-/* Games section */
+/* Games */
 .games-section {
-  padding: 48px 64px;
-}
-
-.games-section h2 {
-  color: #f0c552;
+  padding: 3rem 2rem;
+  text-align: center;
 }
 
 .games-grid {
   display: flex;
-  flex-wrap: wrap;
+  gap: 2rem;
   justify-content: center;
-  gap: 32px;
+  flex-wrap: wrap;
 }
 
 .game-card {
+  background-color: #222;
+  padding: 1rem;
+  border-radius: 10px;
   width: 200px;
-  background-color: #2c2c2c;
-  padding: 16px;
-  border-radius: 12px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .game-cover {
-  background-color: #1e1e1e;
-  height: 300px;
+  background-color: #111;
+  width: 100%;
+  height: 280px;
+  border-radius: 6px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 12px;
-  border-radius: 8px;
-}
-
-.game-button {
-  background-color: #f0c552;
-  color: #121212;
-  padding: 8px 14px;
-  border: none;
-  border-radius: 6px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.game-button:hover {
-  background-color: #d9ac42;
+  margin-bottom: 1rem;
+  color: white;
 }
 
 /* Footer */
-.footer {
-  background-color: #2b1405;
-  color: #f0f0f0;
-  padding: 24px;
+.site-footer {
+  background-color: #2a1201;
+  color: white;
+  padding: 2rem;
   text-align: center;
 }
 
-.footer nav a {
-  color: #f0c552;
-  margin: 0 12px;
-  text-decoration: none;
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.footer nav a:hover {
-  text-decoration: underline;
+.footer-nav a {
+  margin: 0 1rem;
+}
+
+.footer-contact {
+  margin-top: 1rem;
+}
+
+.footer-bottom {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.learn-btn {
+  background-color: #f5c74e;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
 }

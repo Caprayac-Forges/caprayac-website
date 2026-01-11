@@ -1,33 +1,35 @@
-const cards = document.querySelectorAll('.carousel-card');
 let currentIndex = 0;
+const items = document.querySelectorAll('.carousel-item');
+const totalItems = items.length;
 
-function updateCarousel() {
-  cards.forEach((card, index) => {
-    card.classList.remove('active');
-    card.style.transform = 'scale(1)';
+function showItem(index) {
+  items.forEach((item, i) => {
+    item.classList.remove('active');
+    if (i === index) {
+      item.classList.add('active');
+    }
   });
 
-  const current = cards[currentIndex];
-  current.classList.add('active');
+  const carousel = document.querySelector('.carousel');
+  const offset = -index * (items[0].offsetWidth + 32); // 32px is the margin
+  carousel.style.transform = `translateX(${offset}px)`;
 }
 
-function nextSlide() {
-  currentIndex = (currentIndex + 1) % cards.length;
-  updateCarousel();
+function nextItem() {
+  currentIndex = (currentIndex + 1) % totalItems;
+  showItem(currentIndex);
 }
 
-function prevSlide() {
-  currentIndex = (currentIndex - 1 + cards.length) % cards.length;
-  updateCarousel();
+function prevItem() {
+  currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+  showItem(currentIndex);
 }
 
-document.getElementById('carousel-next').addEventListener('click', nextSlide);
-document.getElementById('carousel-prev').addEventListener('click', prevSlide);
+document.getElementById('next').addEventListener('click', nextItem);
+document.getElementById('prev').addEventListener('click', prevItem);
 
-// Auto-scroll every 5 seconds
-setInterval(() => {
-  nextSlide();
-}, 5000);
+// Auto-scroll
+setInterval(nextItem, 4000);
 
-// Initialize
-updateCarousel();
+// Initial display
+showItem(currentIndex);
