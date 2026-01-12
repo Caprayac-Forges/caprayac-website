@@ -1,0 +1,74 @@
+.news-carousel {
+    text-align:center;
+    padding: 3rem 1rem;
+    background-color: #2e0e0e;
+    color: #fbd26a;
+    font-family: 'Monsterrat', sans-serif;
+}
+
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.carousel-cards {
+    display: flex;
+    width: 900px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-card {
+    flex: 0 0 250px;
+    opacity: 0.5;
+    transform: scale(0.85);
+    transition: all 0.4s ease-in-out;
+    background-color: #fbd26a;
+    border-radius: 2rem;
+    padding: 1rem;
+    margin: 0 1rem;
+    color: #1a0505;
+    box-shadow: none;
+    text-align: left;
+}
+
+.carousel-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.center-card {
+    transform: scale(1.1);
+    opacity: 1;
+    box-shadow: 0 0 20px 5px #fbd26a88;
+    z-index: 10;
+}
+
+.left-card, .right-card {
+    opacity: 0.7;
+    z-index: 5;
+}
+
+.hidden-card {
+    display: none;
+}
+
+button {
+    background-color: #3e1502;
+    color: #fbd26a;
+    border: none;
+    padding: 0.75rem 1rem;
+    font-size: 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #5c2406;
+}
