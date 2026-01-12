@@ -1,79 +1,74 @@
 .news-carousel {
-  background-color: #2e0e0e;
-  padding: 4rem 2rem;
-  text-align: center;
+    text-align:center;
+    padding: 3rem 1rem;
+    background-color: #2e0e0e;
+    color: #fbd26a;
+    font-family: 'Monsterrat', sans-serif;
 }
 
-.carousel-title {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 2.5rem;
-  color: #fbd26a;
-  margin-bottom: 2rem;
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
 }
 
-.carousel-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-}
-
-.carousel-arrow {
-  background-color: #3e1502;
-  color: #fbd26a;
-  font-size: 2rem;
-  border: none;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.carousel-arrow:hover {
-  background-color: #5a2108;
-}
-
-.carousel-track {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  width: 100%;
-  max-width: 1000px;
+.carousel-cards {
+    display: flex;
+    width: 900px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .carousel-card {
-  width: 250px;
-  background-color: #fbd26a;
-  color: #1a0505;
-  border-radius: 2rem;
-  padding: 1rem;
-  text-align: left;
-  transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.4s ease;
-  opacity: 0.5;
-  transform: scale(0.9);
+    flex: 0 0 250px;
+    opacity: 0.5;
+    transform: scale(0.85);
+    transition: all 0.4s ease-in-out;
+    background-color: #fbd26a;
+    border-radius: 2rem;
+    padding: 1rem;
+    margin: 0 1rem;
+    color: #1a0505;
+    box-shadow: none;
+    text-align: left;
 }
 
 .carousel-card img {
-  width: 100%;
-  aspect-ratio: 3/4;
-  object-fit: contain;
-  border-radius: 1rem;
-  margin-bottom: 1rem;
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    margin-bottom: 0.5rem;
 }
 
-.carousel-card.center {
-  transform: scale(1.1);
-  opacity: 1;
-  box-shadow: 0 0 20px 5px #fbd26a88;
-  z-index: 2;
+.center-card {
+    transform: scale(1.1);
+    opacity: 1;
+    box-shadow: 0 0 20px 5px #fbd26a88;
+    z-index: 10;
 }
 
-.carousel-card.left,
-.carousel-card.right {
-  z-index: 1;
+.left-card, .right-card {
+    opacity: 0.7;
+    z-index: 5;
 }
 
-.carousel-card.hidden {
-  display: none;
+.hidden-card {
+    display: none;
+}
+
+button {
+    background-color: #3e1502;
+    color: #fbd26a;
+    border: none;
+    padding: 0.75rem 1rem;
+    font-size: 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #5a2203;
 }
