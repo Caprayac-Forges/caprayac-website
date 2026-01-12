@@ -6,8 +6,9 @@
         <title>Caprayac Forges</title>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/NewsCarousel.css">
-        <script src="js/newsCarousel.js" defer></script>
+        <link rel="stylesheet" href="styles/NewsCarousel.css">
+        <script src="scripts/newscarousel.js" defer></script>
+
 
 
     </head>
@@ -27,15 +28,18 @@
 
 
     <main>
-        <section id="news-carousel" class="news-carousel">
-            <h2>Our Latest Work</h2>
-            <div class="carousel-container">
-                <button class="carousel-btn" onclick="prevCard()">&#8592;</button>
-                <div class="carousel-cards" id="carousel-cards">
-            </div>
-            <button class="carousel-btn" onclick="nextCard()">&#8594;</button>
+        <section class="news-section">
+            <h2 class="section-title">Our Latest Work</h2>
+            <div class="carousel-wrapper">
+                <button class="carousel-button" id="prevBtn">←</button>
+
+                <div class="carousel" id="carousel">
+                </div>
+
+                <button class="carousel-button" id="nextBtn">→</button>
             </div>
         </section>
+
     </main>
 
     <section class="social-banner">

@@ -1,8 +1,5 @@
-import React, {UseState} from 'react';
-import './newscarousel.css';
 
-document.addEventListener("DOMContentLoaded", () => {
-const newsItems = [
+const cardsData = [
   {
     title: "Upcoming Dating Sim Game",
     description: "After a close encounter with space pirates, the Captain finds unexpected romance in a far away nebula",
@@ -19,47 +16,40 @@ const newsItems = [
 ];
 
 let currentIndex = 0;
-  const track = document.getElementById("carousel-track");
 
-  function renderCarousel() {
-    track.innerHTML = "";
+function renderCards() {
+  const carousel = document.getElementById("carousel");
+  carousel.innerHTML = "";
 
-    for (let i = 0; i < newsItems.length; i++) {
-      const card = document.createElement("div");
-      const relativeIndex = (i - currentIndex + newsItems.length) % newsItems.length;
+  const total = cardsData.length;
+  const indexes = [
+    (currentIndex + total - 1) % total,
+    currentIndex,
+    (currentIndex + 1) % total
+  ];
 
-      card.className = "carousel-card";
+  indexes.forEach((i, index) => {
+    const card = document.createElement("div");
+    card.classList.add("card");
+    if (index === 1) card.classList.add("center");
 
-      if (relativeIndex === 0) card.classList.add("left");
-      else if (relativeIndex === 1) card.classList.add("center");
-      else if (relativeIndex === 2) card.classList.add("right");
-      else card.classList.add("hidden");
+    card.innerHTML = `
+      <h3>${cardsData[i].title}</h3>
+      <img src="${cardsData[i].image}" alt="${cardsData[i].title}" />
+      <p>${cardsData[i].description}</p>
+    `;
+    carousel.appendChild(card);
+  });
+}
 
-      card.innerHTML = `
-        <div class="card-image">
-          <img src="${newsItems[i].image}" alt="${newsItems[i].title}" />
-        </div>
-        <div class="card-content">
-          <h3>${newsItems[i].title}</h3>
-          <p>${newsItems[i].description}</p>
-        </div>
-      `;
-      track.appendChild(card);
-    }
-  }
-
-  function nextCard() {
-    currentIndex = (currentIndex + 1) % newsItems.length;
-    renderCarousel();
-  }
-
-  function prevCard() {
-    currentIndex = (currentIndex - 1 + newsItems.length) % newsItems.length;
-    renderCarousel();
-  }
-
-  document.getElementById("next-btn").addEventListener("click", nextCard);
-  document.getElementById("prev-btn").addEventListener("click", prevCard);
-
-  renderCarousel();
+document.getElementById("prevBtn").addEventListener("click", () => {
+  currentIndex = (currentIndex - 1 + cardsData.length) % cardsData.length;
+  renderCards();
 });
+
+document.getElementById("nextBtn").addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % cardsData.length;
+  renderCards();
+});
+
+renderCards();
