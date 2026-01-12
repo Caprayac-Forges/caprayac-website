@@ -1,55 +1,65 @@
 
-const cardsData = [
+import React, { useState, useEffect } from "react";
+import "./NewsCarousel.css";
+import logo from "../assets/LogoTransparent.png";
+
+const newsItems = [
   {
     title: "Upcoming Dating Sim Game",
     description: "After a close encounter with space pirates, the Captain finds unexpected romance in a far away nebula",
-    image: "Logo.png",
+    image: logo,
   },  {
     title: "Caprayac Forges Social Media",
     description: "Interested in following us on social media? Check out our links below!",
-    image: "Logo.png",
+    image: logo,
   }, {
     title: "Coming soon",
     description: "More updates on our game coming soon!",
-    image: "Logo.png",
+    image: logo,
   },
 ];
 
-let currentIndex = 0;
+function NewsCarousel() {
+  const [current, setCurrent] = useState(0);
 
-function renderCards() {
-  const carousel = document.getElementById("carousel");
-  carousel.innerHTML = "";
+  const next = () => {
+    setCurrent((prev) => (prev + 1) % newsItems.length);
+  };
 
-  const total = cardsData.length;
-  const indexes = [
-    (currentIndex + total - 1) % total,
-    currentIndex,
-    (currentIndex + 1) % total
-  ];
+  const prev = () => {
+    setCurrent((prev) => (prev - 1 + newsItems.length) % newsItems.length);
+  };
 
-  indexes.forEach((i, index) => {
-    const card = document.createElement("div");
-    card.classList.add("card");
-    if (index === 1) card.classList.add("center");
+  useEffect(() => {
+    const interval = setInterval(next, 5000); // auto scroll every 5 seconds
+    return () => clearInterval(interval);
+  }, []);
 
-    card.innerHTML = `
-      <h3>${cardsData[i].title}</h3>
-      <img src="${cardsData[i].image}" alt="${cardsData[i].title}" />
-      <p>${cardsData[i].description}</p>
-    `;
-    carousel.appendChild(card);
-  });
+  const getClass = (index) => {
+    if (index === current) return "carousel-card active";
+    if (index === (current + 1) % newsItems.length) return "carousel-card right";
+    if (index === (current - 1 + newsItems.length) % newsItems.length) return "carousel-card left";
+    return "carousel-card hidden";
+  };
+
+  return (
+    <div className="news-carousel">
+      <h2>Our Latest Work</h2>
+      <div className="carousel-wrapper">
+        <button className="carousel-btn" onClick={prev}>←</button>
+        <div className="carousel-container">
+          {newsItems.map((item, index) => (
+            <div key={index} className={getClass(index)}>
+              <img src={item.image} alt={item.title} />
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </div>
+          ))}
+        </div>
+        <button className="carousel-btn" onClick={next}>→</button>
+      </div>
+    </div>
+  );
 }
 
-document.getElementById("prevBtn").addEventListener("click", () => {
-  currentIndex = (currentIndex - 1 + cardsData.length) % cardsData.length;
-  renderCards();
-});
-
-document.getElementById("nextBtn").addEventListener("click", () => {
-  currentIndex = (currentIndex + 1) % cardsData.length;
-  renderCards();
-});
-
-renderCards();
+export default NewsCarousel;
