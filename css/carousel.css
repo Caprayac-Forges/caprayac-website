@@ -12,15 +12,16 @@ body {
 
     display: flex;
     justify-content: center;
-    padding: 3rem 0;
+    align-items: center;
+    padding: 0;
 }
 
 .carousel {
     width: 100%;
     height: 400px;
     max-width: 600px;
-    margin: 0;
-    text-align: center;
+
+    background: #381918;
     overflow: hidden;
     position: relative;
 }
@@ -44,9 +45,32 @@ body {
     scroll-snap-align: center;
     margin-right: 0px;
     box-sizing: border-box;
-    background: #381918;
     transform-origin: center center;
     transform: scale(1);
+}
+
+.card_prev,
+.card_next {
+    position: absolute;
+    top: 50%;
+    width: 24px;
+    height: 24px;
+
+    border: solid #d0bc4d;
+    border-width: 0 4px 4px 0;
+
+    cursor: pointer;
+    z-index: 10;
+}
+
+.card_prev {
+    left: 20px;
+    transform: translateY(-50%) rotate(135deg);
+}
+
+.card_next {
+    right: 20px;
+    transform: translateY(-50%) rotate(-45deg);
 }
 
 .card-title {
@@ -81,8 +105,8 @@ body {
     transform: translateY(-50%) rotate(-45deg);
 }
 
-.card::before:hover,
-.card::after:hover {
+.card_prev:hover,
+.card_next:hover {
     opacity: 0.8;
 }
 
