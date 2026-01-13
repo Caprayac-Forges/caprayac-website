@@ -37,20 +37,36 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function setPosition(animate = true) {
-    const slideW = slideWidth();
-    const containerW = inner.getBoundingClientRect().width;
-    const centerOffset = (containerW - slideW) / 2;
+  const containerRect = inner.getBoundingClientRect();
+  const slideRect = slides[currentIndex].getBoundingClientRect();
 
-    const offset = slideW * currentIndex - centerOffset;
+  // Where the container center is (in viewport coordinates)
+  const containerCenter = containerRect.left + containerRect.width / 2;
 
-    track.style.transition = animate
-      ? `transform ${DURATION}ms ${EASE}`
-      : "none";
+  // Where the slide center is (in viewport coordinates)
+  const slideCenter = slideRect.left + slideRect.width / 2;
 
-    track.style.transform = `translateX(-${offset}px)`;
+  // How far we need to move the track to align those centers
+  const delta = slideCenter - containerCenter;
 
-    requestAnimationFrame(updateActiveSlide);
+  track.style.transition = animate
+    ? `transform ${DURATION}ms ${EASE}`
+    : "none";
+
+  // Current translateX (read from computed transform)
+  const computed = getComputedStyle(track).transform;
+  let currentTranslate = 0;
+  if (computed && computed !== "none") {
+    const matrix = new DOMMatrixReadOnly(computed);
+    currentTranslate = matrix.m41;
   }
+
+  // Move the track by delta (note: translateX is negative to move left)
+  track.style.transform = `translateX(${currentTranslate - delta}px)`;
+
+  requestAnimationFrame(updateActiveSlide);
+}
+
 
   function updateActiveSlide() {
     slides.forEach(slide => slide.classList.remove("is-active"));
