@@ -4,64 +4,42 @@ document.addEventListener("DOMContentLoaded", () => {
   const prevBtn = carousel.querySelector(".carousel-arrow.left");
   const nextBtn = carousel.querySelector(".carousel-arrow.right");
 
-  const CLONES = 1;
-  let isFixing = false;
+  const DURATION = 300;
+  const EASE = "cubic-bezier(0, 0, 0.2, 1)";
 
-  // Grab original slides
-  const originals = Array.from(track.children);
-
-  // Clone last slide(s) to the front
-  originals.slice(-CLONES).forEach(slide => {
-    const clone = slide.cloneNode(true);
-    clone.classList.add("is-clone");
-    track.insertBefore(clone, track.firstChild);
-  });
-
-  // Clone first slide(s) to the end
-  originals.slice(0, CLONES).forEach(slide => {
-    const clone = slide.cloneNode(true);
-    clone.classList.add("is-clone");
-    track.appendChild(clone);
-  });
-
-  const slides = Array.from(track.children);
+  let slides = Array.from(track.children);
+  let currentIndex = 1; // start on first real slide
+  let isAnimating = false;
 
   /* -------------------------
-     Utility helpers
+     Clone edges for looping
   ------------------------- */
 
-  function disableSmooth() {
-    track.style.scrollBehavior = "auto";
+  const firstClone = slides[0].cloneNode(true);
+  const lastClone = slides[slides.length - 1].cloneNode(true);
+
+  firstClone.classList.add("is-clone");
+  lastClone.classList.add("is-clone");
+
+  track.appendChild(firstClone);
+  track.insertBefore(lastClone, slides[0]);
+
+  slides = Array.from(track.children);
+
+  /* -------------------------
+     Layout
+  ------------------------- */
+
+  function slideWidth() {
+    return slides[0].getBoundingClientRect().width;
   }
 
-  function enableSmooth() {
-    track.style.scrollBehavior = "smooth";
-  }
-
-  function slideStep() {
-    if (slides.length < 2) return 0;
-    return slides[1].offsetLeft - slides[0].offsetLeft;
-  }
-
-  function currentIndex() {
-    const step = slideStep();
-    if (!step) return 0;
-    return Math.round(track.scrollLeft / step);
-  }
-
-  function scrollToIndex(index, smooth = true) {
-    if (!slides[index]) return;
-
-    if (smooth) enableSmooth();
-    else disableSmooth();
-
-    track.scrollTo({
-      left: slides[index].offsetLeft
-    });
-
-    if (!smooth) {
-      requestAnimationFrame(enableSmooth);
-    }
+  function setPosition(animate = true) {
+    const offset = slideWidth() * currentIndex;
+    track.style.transition = animate
+      ? `transform ${DURATION}ms ${EASE}`
+      : "none";
+    track.style.transform = `translateX(-${offset}px)`;
   }
 
   /* -------------------------
@@ -69,57 +47,35 @@ document.addEventListener("DOMContentLoaded", () => {
   ------------------------- */
 
   function goNext() {
-    if (isFixing) return;
-    scrollToIndex(currentIndex() + 1, true);
+    if (isAnimating) return;
+    isAnimating = true;
+    currentIndex++;
+    setPosition(true);
   }
 
   function goPrev() {
-    if (isFixing) return;
-    scrollToIndex(currentIndex() - 1, true);
+    if (isAnimating) return;
+    isAnimating = true;
+    currentIndex--;
+    setPosition(true);
   }
 
-  prevBtn.addEventListener("click", goPrev);
   nextBtn.addEventListener("click", goNext);
+  prevBtn.addEventListener("click", goPrev);
 
   /* -------------------------
-     Infinite loop correction
+     Loop correction
   ------------------------- */
 
-  function fixLoopIfNeeded() {
-    if (isFixing) return;
-    isFixing = true;
-
-    const idx = currentIndex();
-    const firstReal = CLONES;
-    const lastReal = CLONES + originals.length - 1;
-
-    // Jump from front clone → last real
-    if (idx < firstReal) {
-      disableSmooth();
-      scrollToIndex(lastReal, false);
-      isFixing = false;
-      return;
+  track.addEventListener("transitionend", () => {
+    // If we hit the fake last slide → jump to real first
+    if (slides[currentIndex].classList.contains("is-clone")) {
+      track.style.transition = "none";
+      currentIndex =
+        currentIndex === 0 ? slides.length - 2 : 1;
+      setPosition(false);
     }
-
-    // Jump from end clone → first real
-    if (idx > lastReal) {
-      disableSmooth();
-      scrollToIndex(firstReal, false);
-      isFixing = false;
-      return;
-    }
-
-    isFixing = false;
-  }
-
-  /* -------------------------
-     Scroll listener (debounced)
-  ------------------------- */
-
-  let scrollTimer = null;
-  track.addEventListener("scroll", () => {
-    if (scrollTimer) clearTimeout(scrollTimer);
-    scrollTimer = setTimeout(fixLoopIfNeeded, 60);
+    isAnimating = false;
   });
 
   /* -------------------------
@@ -127,13 +83,12 @@ document.addEventListener("DOMContentLoaded", () => {
   ------------------------- */
 
   window.addEventListener("resize", () => {
-    scrollToIndex(currentIndex(), false);
+    setPosition(false);
   });
 
   /* -------------------------
      Init
   ------------------------- */
 
-  // Start on first real slide (skip clone)
-  scrollToIndex(CLONES, false);
+  setPosition(false);
 });

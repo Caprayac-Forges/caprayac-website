@@ -1,120 +1,133 @@
-body {
-    margin: 0;
-}
+/* --------------------
+   Section spacing
+-------------------- */
 
 .whats-new {
-    margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
 }
+
+/* --------------------
+   Carousel wrapper
+-------------------- */
 
 .carousel-container {
-    width: 100%;
+  width: 100%;
 }
+
+/* --------------------
+   Carousel viewport
+-------------------- */
 
 .carousel {
-    position: relative;
-    width: 100%;
-    height: 400px;
+  position: relative;
+  width: 100%;
+  height: 400px;
 
-    background: #381918;
-    overflow: hidden;
+  background: #381918;
+  overflow: hidden;
 }
+
+/* --------------------
+   Track (film strip)
+-------------------- */
 
 .cards {
-    display: flex;
-    height: 100%;
-
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-
-    scrollbar-width: none;
+  display: flex;
+  height: 100%;
+  will-change: transform;
 }
 
-.cards::-webkit-scrollbar {
-    display: none;
-}
+/* --------------------
+   Slides
+-------------------- */
 
 .card {
-    flex: 0 0 70%;
-    height: 100%;
+  flex: 0 0 70%; /* Blizzard-style: neighbors visible */
+  height: 100%;
 
-    scroll-snap-align: center;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+/* --------------------
+   Card content
+-------------------- */
 
 .card-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 35px;
-    font-weight: bold;
-    color: #d0bc4d;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 35px;
+  font-weight: bold;
+  color: #d0bc4d;
 }
 
+/* --------------------
+   Arrows
+-------------------- */
 
 .carousel-arrow {
-    position: absolute;
-    top: 50%;
+  position: absolute;
+  top: 50%;
+  width: 44px;
+  height: 44px;
 
-    width: 44px;
-    height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.4);
 
-    border: none;
-    border-radius: 50%;
-    background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    cursor: pointer;
-    transform: translateY(-50%);
-    z-index: 10;
+  cursor: pointer;
+  transform: translateY(-50%);
+  z-index: 10;
 }
 
 .carousel-arrow.left {
-    left: 20px;
+  left: 20px;
 }
 
 .carousel-arrow.right {
-    right: 20px;
+  right: 20px;
 }
 
 .carousel-arrow::before {
-    content: '';
-    width: 12px;
-    height: 12px;
+  content: '';
+  width: 12px;
+  height: 12px;
 
-    border: solid #d0bc4d;
-    border-width: 0 3px 3px 0;
+  border: solid #d0bc4d;
+  border-width: 0 3px 3px 0;
 }
 
 .carousel-arrow.left::before {
-    transform: rotate(135deg);
+  transform: rotate(135deg);
 }
 
 .carousel-arrow.right::before {
-    transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 
 .carousel-arrow:hover {
-    opacity: 0.85;
+  opacity: 0.85;
 }
 
-.carousel-nav {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+/* --------------------
+   Dots
+-------------------- */
 
-    margin-top: 12px;
+.carousel-nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 12px;
 }
 
 .nav_dot {
-    width: 10px;
-    height: 10px;
-
-    border-radius: 50%;
-    background: #000;
-    cursor: pointer;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #000;
+  cursor: pointer;
 }
