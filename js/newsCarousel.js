@@ -4,120 +4,136 @@ document.addEventListener("DOMContentLoaded", () => {
   const prevBtn = carousel.querySelector(".carousel-arrow.left");
   const nextBtn = carousel.querySelector(".carousel-arrow.right");
 
-  // Configuration: how many slides to clone on each side.
-  // 1 is enough for a simple infinite loop.
   const CLONES = 1;
-
-  let isJumping = false;
+  let isFixing = false;
 
   // Grab original slides
   const originals = Array.from(track.children);
 
-  // Clone last CLONES slides to the front
-  const headClones = originals.slice(-CLONES).map((node) => node.cloneNode(true));
-  headClones.forEach((c) => {
-    c.classList.add("is-clone");
-    track.insertBefore(c, track.firstChild);
+  // Clone last slide(s) to the front
+  originals.slice(-CLONES).forEach(slide => {
+    const clone = slide.cloneNode(true);
+    clone.classList.add("is-clone");
+    track.insertBefore(clone, track.firstChild);
   });
 
-  // Clone first CLONES slides to the end
-  const tailClones = originals.slice(0, CLONES).map((node) => node.cloneNode(true));
-  tailClones.forEach((c) => {
-    c.classList.add("is-clone");
-    track.appendChild(c);
+  // Clone first slide(s) to the end
+  originals.slice(0, CLONES).forEach(slide => {
+    const clone = slide.cloneNode(true);
+    clone.classList.add("is-clone");
+    track.appendChild(clone);
   });
 
-  // After clones, all slides:
   const slides = Array.from(track.children);
 
-  function slideStepPx() {
-    // cards are flex items; offsetWidth gives the visible width.
-    // If you later add gap, include it by measuring distance between slides.
-    const a = slides[0];
-    const b = slides[1];
-    if (!a || !b) return 0;
-    return b.offsetLeft - a.offsetLeft;
+  /* -------------------------
+     Utility helpers
+  ------------------------- */
+
+  function disableSmooth() {
+    track.style.scrollBehavior = "auto";
   }
 
-  function scrollToIndex(index, smooth = true) {
-    const target = slides[index];
-    if (!target) return;
-
-    track.scrollTo({
-      left: target.offsetLeft,
-      behavior: smooth ? "smooth" : "auto"
-    });
+  function enableSmooth() {
+    track.style.scrollBehavior = "smooth";
   }
 
-  // Start on the first real slide (after the head clones)
-  function initPosition() {
-    const startIndex = CLONES;
-    scrollToIndex(startIndex, false);
+  function slideStep() {
+    if (slides.length < 2) return 0;
+    return slides[1].offsetLeft - slides[0].offsetLeft;
   }
 
   function currentIndex() {
-    const step = slideStepPx();
+    const step = slideStep();
     if (!step) return 0;
-    // Find closest slide to current scrollLeft
-    const approx = Math.round(track.scrollLeft / step);
-    return Math.max(0, Math.min(slides.length - 1, approx));
+    return Math.round(track.scrollLeft / step);
   }
 
+  function scrollToIndex(index, smooth = true) {
+    if (!slides[index]) return;
+
+    if (smooth) enableSmooth();
+    else disableSmooth();
+
+    track.scrollTo({
+      left: slides[index].offsetLeft
+    });
+
+    if (!smooth) {
+      requestAnimationFrame(enableSmooth);
+    }
+  }
+
+  /* -------------------------
+     Navigation
+  ------------------------- */
+
   function goNext() {
-    if (isJumping) return;
+    if (isFixing) return;
     scrollToIndex(currentIndex() + 1, true);
   }
 
   function goPrev() {
-    if (isJumping) return;
+    if (isFixing) return;
     scrollToIndex(currentIndex() - 1, true);
-  }
-
-  // When we land on a clone, jump instantly to the equivalent real slide
-  function fixLoopIfNeeded() {
-    const idx = currentIndex();
-
-    // If we’re at the very first clone area (front clones)
-    if (idx < CLONES) {
-      isJumping = true;
-      // Jump to the equivalent real slide near the end
-      // Example with CLONES=1:
-      // idx 0 (clone of last) -> jump to last real slide index (CLONES + originals.length - 1)
-      const realIdx = CLONES + originals.length - (CLONES - idx);
-      scrollToIndex(realIdx, false);
-      isJumping = false;
-      return;
-    }
-
-    // If we’re at the tail clone area (end clones)
-    const lastRealIndex = CLONES + originals.length - 1;
-    const firstTailCloneIndex = lastRealIndex + 1;
-
-    if (idx >= firstTailCloneIndex) {
-      isJumping = true;
-      // Jump back to the equivalent real slide near the start
-      // Example with CLONES=1:
-      // idx last+1 (clone of first) -> jump to first real slide index CLONES
-      const realIdx = CLONES + (idx - firstTailCloneIndex);
-      scrollToIndex(realIdx, false);
-      isJumping = false;
-    }
   }
 
   prevBtn.addEventListener("click", goPrev);
   nextBtn.addEventListener("click", goNext);
 
-  // Fix looping after scroll settles
+  /* -------------------------
+     Infinite loop correction
+  ------------------------- */
+
+  function fixLoopIfNeeded() {
+    if (isFixing) return;
+    isFixing = true;
+
+    const idx = currentIndex();
+    const firstReal = CLONES;
+    const lastReal = CLONES + originals.length - 1;
+
+    // Jump from front clone → last real
+    if (idx < firstReal) {
+      disableSmooth();
+      scrollToIndex(lastReal, false);
+      isFixing = false;
+      return;
+    }
+
+    // Jump from end clone → first real
+    if (idx > lastReal) {
+      disableSmooth();
+      scrollToIndex(firstReal, false);
+      isFixing = false;
+      return;
+    }
+
+    isFixing = false;
+  }
+
+  /* -------------------------
+     Scroll listener (debounced)
+  ------------------------- */
+
   let scrollTimer = null;
   track.addEventListener("scroll", () => {
     if (scrollTimer) clearTimeout(scrollTimer);
-    scrollTimer = setTimeout(fixLoopIfNeeded, 80);
+    scrollTimer = setTimeout(fixLoopIfNeeded, 60);
   });
 
+  /* -------------------------
+     Resize handling
+  ------------------------- */
+
   window.addEventListener("resize", () => {
-    // Keep the same logical slide on resize by snapping to closest
     scrollToIndex(currentIndex(), false);
   });
 
-  initPosition();
+  /* -------------------------
+     Init
+  ------------------------- */
+
+  // Start on first real slide (skip clone)
+  scrollToIndex(CLONES, false);
 });
