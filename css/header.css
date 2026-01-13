@@ -1,20 +1,59 @@
+body {
+  padding-top: 80px;
+}
+
 .site-header-wrapper {
-    box-sizing: border-box;
-    z-index: 20000;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    margin: 0;
-    border: 0;
+
+    height: 80px;
+    box-sizing: border-box;
+    z-index: 20000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    padding: 0 2rem;
 
     font-family: 'Montserrat', sans-serif;
     font-size: 1em;
     letter-spacing: -0.05em;
 
     background-color: #5c4135;
-
-    line-height: 2;
     color: #d0bc4d;
+
+    line-height: 1.5;
     font-weight: 400;
+
+    transition background-color: 0.3s ease-in-out;
 }
+
+.site-header-wrapper.site-header-transparent {
+    background-color: transparent;
+    border-bottom: none;
+}
+
+.site-header .logo {
+    height: 60px;
+    width: auto;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #d0bc4d;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-weight: 600;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
