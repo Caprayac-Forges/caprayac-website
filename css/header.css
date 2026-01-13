@@ -98,6 +98,11 @@ body {
 
  /* Adjust for mobile */
 @media (max-width: 768px) {
+    body {
+        margin: 0;
+        padding-top: 100px;
+    }
+
     .site-header-wrapper {
         flex-direction: column;
         align-items: stretch;
