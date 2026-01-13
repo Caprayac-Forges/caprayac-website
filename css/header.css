@@ -38,7 +38,7 @@ body {
     border-bottom: none;
 }*/
 
-.site-header .logo {
+.site-header-wrapper .logo {
     height: 60px;
     width: auto;
 }
@@ -57,5 +57,10 @@ body {
 
 .nav-links a:hover {
     text-decoration: underline;
+}
+
+body {
+  margin: 0;
+  padding-top: 80px;
 }
 
