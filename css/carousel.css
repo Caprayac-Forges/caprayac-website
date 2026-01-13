@@ -18,6 +18,12 @@
    Carousel viewport
 -------------------- */
 
+.carousel,
+.carousel-inner,
+.cards {
+  height: 400px;
+}
+
 .carousel {
   position: relative;
   width: 100%;
@@ -40,8 +46,8 @@
 -------------------- */
 
 .cards {
-  margin: 0;
-  padding: 0;
+  flex-direction: row;
+  align-items: center;
 }
 
 /* --------------------
@@ -49,17 +55,10 @@
 -------------------- */
 
 .card {
-  flex: 0 0 60%;
-  transition: transform 300ms ease, opacity 300ms ease;
-
-  opacity: 0.4;
-  transform: scale(0.9);
-
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 
 .card.is-active {
   opacity: 1;
