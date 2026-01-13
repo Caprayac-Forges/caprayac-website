@@ -1,0 +1,110 @@
+body {
+    height: 100%;
+    margin: 0px;
+}
+
+.carousel-container {
+    background: linear-gradient (
+        120deg,
+        #5c4135,
+        #753a16
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.carousel {
+    width: 100%;
+    height: 400px;
+    max-width: 600px;
+    margin: 30px;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.cards {
+    display: flex;
+    overflow-x: scroll;
+    position: relative;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: 100%;
+    height: 400px;
+    scroll-snap-align: center;
+    margin-right: 0px;
+    box-sizing: border-box;
+    background: #381918;
+    transform-origin: center center;
+    transform: scale(1);
+}
+
+.card_text {
+    font-size: 35 px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    color: #d0bc4d;
+}
+
+a.card_prev,
+.card::before {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    left: 7%;
+}
+
+a.card_next,
+.card::after {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    right: 7%;
+}
+
+.card::before,
+.card::after,
+.card_prev,
+.card_next {
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    border: none;
+    padding: 3px;
+    box-sizing: border-box;
+}
+
+.slider::before,
+.slider::after {
+    content: '';
+    z-index: 1;
+    background: none;
+    pointer-events: none;
+}
+
+.carousel-nav {
+    position: absolute;
+    box-sizing: border-box;
+    bottom: 5%;
+    width: 200px;
+    margin-left: -100px;
+    text-align: center;
+}
+
+.nav_dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background: black;
+    border-radius: 50%;
+    cursor: pointer;
+}
