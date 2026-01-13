@@ -28,7 +28,7 @@ body {
     line-height: 1.5;
     font-weight: 400;
 
-    transition background-color: 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
 }
 
 .site-header-wrapper.site-header-transparent {
