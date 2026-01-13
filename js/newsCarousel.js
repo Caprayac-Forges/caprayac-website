@@ -36,9 +36,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function setPosition(animate = true) {
   const slideW = slideWidth();
-  const carouselW = carousel.getBoundingClientRect().width;
-  const centerOffset = (carouselW - slideW) / 2;
+  const containerW = carousel.querySelector(".carousel-inner")
+    .getBoundingClientRect().width;
 
+  const centerOffset = (containerW - slideW) / 2;
   const offset = slideW * currentIndex - centerOffset;
 
   track.style.transition = animate
@@ -49,6 +50,7 @@ function setPosition(animate = true) {
 
   requestAnimationFrame(updateActiveSlide);
 }
+
 
 
 
