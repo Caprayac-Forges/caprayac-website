@@ -35,16 +35,23 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function setPosition(animate = true) {
-    const offset = slideWidth() * currentIndex;
-    track.style.transition = animate
-      ? `transform ${DURATION}ms ${EASE}`
-      : "none";
-    track.style.transform = `translateX(-${offset}px)`;
-  }
+  const offset = slideWidth() * currentIndex;
+  track.style.transition = animate
+    ? `transform ${DURATION}ms ${EASE}`
+    : "none";
+  track.style.transform = `translateX(-${offset}px)`;
+
+  requestAnimationFrame(updateActiveSlide);
+}
+
 
   /* -------------------------
      Navigation
   ------------------------- */
+  function updateActiveSlide() {
+  slides.forEach(slide => slide.classList.remove("is-active"));
+  slides[currentIndex].classList.add("is-active");
+  }
 
   function goNext() {
     if (isAnimating) return;
@@ -75,6 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
         currentIndex === 0 ? slides.length - 2 : 1;
       setPosition(false);
     }
+    updateActiveSlide();
     isAnimating = false;
   });
 
@@ -91,4 +99,5 @@ document.addEventListener("DOMContentLoaded", () => {
   ------------------------- */
 
   setPosition(false);
+  updateActiveSlide();
 });

@@ -42,12 +42,21 @@
 -------------------- */
 
 .card {
-  flex: 0 0 70%; /* Blizzard-style: neighbors visible */
-  height: 100%;
+  flex: 0 0 60%;
+  transition: transform 300ms ease, opacity 300ms ease;
+
+  opacity: 0.4;
+  transform: scale(0.9);
 
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+
+.card.is-active {
+  opacity: 1;
+  transform: scale(1);
 }
 
 /* --------------------
