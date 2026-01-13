@@ -9,10 +9,9 @@ body {
         #5c4135,
         #753a16
     );
+
     display: flex;
-    align-items: center;
     justify-content: center;
-    height: 450px;
     padding: 3rem 0;
 }
 
@@ -20,7 +19,7 @@ body {
     width: 100%;
     height: 400px;
     max-width: 600px;
-    margin: 30px;
+    margin: 0;
     text-align: center;
     overflow: hidden;
     position: relative;
@@ -36,6 +35,7 @@ body {
 
 .card {
     display: flex;
+    position: relative;
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
@@ -59,8 +59,36 @@ body {
 .card::before,
 .card::after {
     content: '';
+    position: absolute;
+    top: 50%;
+    width: 18px;
+    height: 18px;
+
     border: solid #d0bc4d;
     border-width: 0 4px 4px 0;
+
+    transform-origin: center;
+    cursor: pointer;
+}
+
+.card::before {
+    left: 20px;
+    transform: translateY(-50%) rotate(135deg);
+}
+
+.card::after {
+    right: 20px;
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+.card::before:hover,
+.card::after:hover {
+    opacity: 0.8;
+}
+
+.card::before,
+.card::after {
+    padding: 10px;
 }
 
 a.card_prev,
