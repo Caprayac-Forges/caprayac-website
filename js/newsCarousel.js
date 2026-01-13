@@ -34,15 +34,22 @@ document.addEventListener("DOMContentLoaded", () => {
     return slides[0].getBoundingClientRect().width;
   }
 
-  function setPosition(animate = true) {
-  const offset = slideWidth() * currentIndex;
+function setPosition(animate = true) {
+  const slideW = slideWidth();
+  const carouselW = carousel.getBoundingClientRect().width;
+  const centerOffset = (carouselW - slideW) / 2;
+
+  const offset = slideW * currentIndex - centerOffset;
+
   track.style.transition = animate
     ? `transform ${DURATION}ms ${EASE}`
     : "none";
+
   track.style.transform = `translateX(-${offset}px)`;
 
   requestAnimationFrame(updateActiveSlide);
 }
+
 
 
   /* -------------------------
