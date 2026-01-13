@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const track = document.getElementById("newsCarousel");
   const carousel = track.closest(".carousel");
+  const inner = carousel.querySelector(".carousel-inner");
   const prevBtn = carousel.querySelector(".carousel-arrow.left");
   const nextBtn = carousel.querySelector(".carousel-arrow.right");
 
@@ -8,12 +9,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const EASE = "cubic-bezier(0, 0, 0.2, 1)";
 
   let slides = Array.from(track.children);
-  let currentIndex = 1; // start on first real slide
+  let currentIndex = 1;
   let isAnimating = false;
 
-  /* -------------------------
-     Clone edges for looping
-  ------------------------- */
+  /* -----------------------------
+     Clone edges for infinite loop
+  ----------------------------- */
 
   const firstClone = slides[0].cloneNode(true);
   const lastClone = slides[slides.length - 1].cloneNode(true);
@@ -25,42 +26,40 @@ document.addEventListener("DOMContentLoaded", () => {
   track.insertBefore(lastClone, slides[0]);
 
   slides = Array.from(track.children);
+  currentIndex = 1;
 
-  /* -------------------------
-     Layout
-  ------------------------- */
+  /* -----------------------------
+     Helpers
+  ----------------------------- */
 
   function slideWidth() {
     return slides[0].getBoundingClientRect().width;
   }
 
-function setPosition(animate = true) {
-  const slideW = slideWidth();
-  const containerW = carousel.querySelector(".carousel-inner")
-    .getBoundingClientRect().width;
+  function setPosition(animate = true) {
+    const slideW = slideWidth();
+    const containerW = inner.getBoundingClientRect().width;
+    const centerOffset = (containerW - slideW) / 2;
 
-  const centerOffset = (containerW - slideW) / 2;
-  const offset = slideW * currentIndex - centerOffset;
+    const offset = slideW * currentIndex - centerOffset;
 
-  track.style.transition = animate
-    ? `transform ${DURATION}ms ${EASE}`
-    : "none";
+    track.style.transition = animate
+      ? `transform ${DURATION}ms ${EASE}`
+      : "none";
 
-  track.style.transform = `translateX(-${offset}px)`;
+    track.style.transform = `translateX(-${offset}px)`;
 
-  requestAnimationFrame(updateActiveSlide);
-}
-
-
-
-
-  /* -------------------------
-     Navigation
-  ------------------------- */
-  function updateActiveSlide() {
-  slides.forEach(slide => slide.classList.remove("is-active"));
-  slides[currentIndex].classList.add("is-active");
+    requestAnimationFrame(updateActiveSlide);
   }
+
+  function updateActiveSlide() {
+    slides.forEach(slide => slide.classList.remove("is-active"));
+    slides[currentIndex].classList.add("is-active");
+  }
+
+  /* -----------------------------
+     Navigation
+  ----------------------------- */
 
   function goNext() {
     if (isAnimating) return;
@@ -79,34 +78,38 @@ function setPosition(animate = true) {
   nextBtn.addEventListener("click", goNext);
   prevBtn.addEventListener("click", goPrev);
 
-  /* -------------------------
+  /* -----------------------------
      Loop correction
-  ------------------------- */
+  ----------------------------- */
 
   track.addEventListener("transitionend", () => {
-    // If we hit the fake last slide → jump to real first
     if (slides[currentIndex].classList.contains("is-clone")) {
       track.style.transition = "none";
+
       currentIndex =
         currentIndex === 0 ? slides.length - 2 : 1;
+
       setPosition(false);
     }
-    updateActiveSlide();
+
     isAnimating = false;
+    updateActiveSlide();
   });
 
-  /* -------------------------
+  /* -----------------------------
      Resize handling
-  ------------------------- */
+  ----------------------------- */
 
   window.addEventListener("resize", () => {
     setPosition(false);
   });
 
-  /* -------------------------
-     Init
-  ------------------------- */
+  /* -----------------------------
+     Init (important)
+  ----------------------------- */
 
-  setPosition(false);
-  updateActiveSlide();
+  requestAnimationFrame(() => {
+    setPosition(false);
+    updateActiveSlide();
+  });
 });
