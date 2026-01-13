@@ -1,6 +1,5 @@
 body {
   padding-top: 80px;
-  background: red;
 }
 
 .site-header-wrapper {
@@ -8,6 +7,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
+    border-bottom: 3px solid black;
 
     height: 80px;
     box-sizing: border-box;
@@ -32,10 +32,11 @@ body {
     transition: background-color 0.3s ease-in-out;
 }
 
+/*
 .site-header-wrapper.site-header-transparent {
     background-color: transparent;
     border-bottom: none;
-}
+}*/
 
 .site-header .logo {
     height: 60px;
