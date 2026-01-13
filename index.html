@@ -26,6 +26,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
         <link rel = "stylesheet" href = "./css/header.css">
         <link rel = "stylesheet" href = "./css/carousel.css">
+        <script src="js/newscarousel.js" defer></script>
     </head>
 
 <body>
@@ -66,36 +67,25 @@
             <h2> What we're up to</h2>
         </section>
 
-        <div class = "carousel-container">
-            <div class = "carousel">
-                <div class = "cards">
-                    <div id = "card1" class = "card">
-                        <span class = "card-title"> Who are we? </span>
-                        <a class = "card_prev" href="#card3">  </a>
-                        <a class = "card_next" href="#card2">  </a>
-                    </div>
-                    <div id = "card2" class = "card">
-                        <span class = "card-title"> Our latest project </span>
-                        <a class = "card_prev" href="#card1"> </a>
-                        <a class = "card_next" href="#card3"> </a>
-                    </div>
-                    <div id = "card3" class = "card">
-                        <span class = "card-title"> Socials </span>
-                        <a class = "card_prev" href="#card2">  </a>
-                        <a class = "card_next" href="#card1">  </a>
-                    </div>
-                </div>
-                <a class="carousel-arrow left" href="#card1"></a>
-                <a class="carousel-arrow right" href="#card3"></a>
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="cards" id="newsCarousel">
+                    <div class="card"><span class="card-title">Who are we?</span></div>
+                    <div class="card"><span class="card-title">Our latest project</span></div>
+                    <div class="card"><span class="card-title">Socials</span></div>
                 </div>
 
-                <div class = "carousel-nav">
-                <a class = "nav_dot" href = "#card1">  </a>
-                <a class = "nav_dot" href = "#card2">  </a>
-                <a class = "nav_dot" href = "#card3">  </a>
-                </div>
+                <button class="carousel-arrow left"></button>
+                <button class="carousel-arrow right"></button>
+            </div>
+
+            <div class="carousel-nav">
+                <span class="nav_dot"></span>
+                <span class="nav_dot"></span>
+                <span class="nav_dot"></span>
             </div>
         </div>
+
     </main>
 <!--
     <main>
