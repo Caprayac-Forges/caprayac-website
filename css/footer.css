@@ -1,17 +1,63 @@
-/* --------------------
-   Footer wrapper
--------------------- */
+/* =========================
+   SOCIAL BANNER
+========================= */
+
+.social-banner {
+  width: 100%;
+  background-color: #240e0e;
+  padding: 1rem 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-top: 1px solid #f3bf4d;
+  border-bottom: 1px solid #f3bf4d;
+}
+
+.social-nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.social-nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+}
+
+.social-nav a img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+
+  filter: brightness(0) invert(1);
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.social-nav a:hover img {
+  transform: scale(1.2);
+  filter: brightness(1.2) drop-shadow(0 0 5px #ffdfa2);
+}
+
+/* =========================
+   FOOTER WRAPPER
+========================= */
 
 .site-footer {
   background-color: #5c4135;
-  color: #d0bc4d;
-  padding: 2rem 1.5rem 1rem;
+  color: #f3bf4d;
+
+  padding: 2rem 1.5rem 1.25rem;
   font-family: 'Montserrat', sans-serif;
 }
 
-/* --------------------
-   Footer layout
--------------------- */
+/* =========================
+   FOOTER INNER LAYOUT
+========================= */
 
 .footer-inner {
   max-width: 1200px;
@@ -23,18 +69,18 @@
   gap: 2rem;
 }
 
-/* --------------------
-   Brand
--------------------- */
+/* =========================
+   BRAND
+========================= */
 
 .footer-logo {
   height: 48px;
   width: auto;
 }
 
-/* --------------------
-   Navigation
--------------------- */
+/* =========================
+   FOOTER NAVIGATION
+========================= */
 
 .footer-nav {
   display: flex;
@@ -42,7 +88,7 @@
 }
 
 .footer-nav a {
-  color: #d0bc4d;
+  color: #f3bf4d;
   text-decoration: none;
   font-weight: 600;
 }
@@ -51,9 +97,9 @@
   text-decoration: underline;
 }
 
-/* --------------------
-   Copyright / meta
--------------------- */
+/* =========================
+   COPYRIGHT / META
+========================= */
 
 .footer-meta {
   margin-top: 1.5rem;
@@ -62,9 +108,9 @@
   opacity: 0.85;
 }
 
-/* --------------------
-   Mobile behavior
--------------------- */
+/* =========================
+   MOBILE ADJUSTMENTS
+========================= */
 
 @media (max-width: 768px) {
   .footer-inner {
