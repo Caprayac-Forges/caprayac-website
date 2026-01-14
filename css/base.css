@@ -2,45 +2,41 @@ body {
     font-size: 1em;
     font-family: 'Montserrat', sans-serif;
     letter-spacing: -0.05em;
-    width: 100vw;
 
     flex-direction: column;
     display: flex;
 
     color: #d0bc4d;
     background-color: #240e0e;
+    overflow-x: hidden;
 }
 
 html, body {
   height: 100%;
+  margin: 0;
 }
 
 .site-main {
     flex: 1;
 }
 
-.site-main {
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-.site-main {
-    max-width: 1200px;
-    margin-left: auto !important;
-    margin-right: auto !important;
-}
-
-.whats-new {
-    color: #d0bc4d;
-}
-
 .main {
-    color: #d0bc4d;
     padding-top: 80px;
 }
 
+.content-center-large {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content-gutter-large {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
 @media screen and (min-width: 960px) {
-    .site-main {
+    .content-gutter-large {
         padding-left: 50px;
         padding-right: 50px;
     }
