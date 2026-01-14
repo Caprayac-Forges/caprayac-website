@@ -4,8 +4,8 @@
 
 .social-banner {
   width: 100vw;
+  height: 60 px;
   background-color: #240e0e;
-  padding: 1rem 0;
 
   display: flex;
   justify-content: center;
