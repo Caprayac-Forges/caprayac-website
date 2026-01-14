@@ -97,7 +97,7 @@
 @media (max-width: 768px) {
   .footer-brand-nav {
     flex-direction: column;
-    text-align: center;
+    text-align: left;
     gap: 1rem;
   }
 
