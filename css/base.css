@@ -4,7 +4,6 @@ body {
     letter-spacing: -0.05em;
     padding: 2rem;
     width: 100vw;
-    margin-left: calc(-50vw + 50%);
 
     flex-direction: column;
     display: flex;
