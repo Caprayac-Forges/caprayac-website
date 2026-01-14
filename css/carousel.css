@@ -20,7 +20,7 @@
   width: 100vw; /* Full viewport width */
   margin-left: calc(-50vw + 50%); /* Center the carousel */
 
-  background: linear-gradient(to bottom, #240e0e 0%, black 100%);
+  background: linear-gradient(to bottom, #240e0e, #120606, #000000);
   overflow: hidden; /* Hide overflowing slides */
 }
 
@@ -61,6 +61,7 @@
 .card.is-active {
   opacity: 1;
   transform: scale(1);
+  background: #381918;
 }
 
 /* Style cards*/
