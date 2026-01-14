@@ -4,7 +4,8 @@
 
 .social-banner {
   width: 100vw;
-  height: 60 px;
+  height: 80 px;
+  margin-left: calc(-50vw + 50%);
   background-color: #240e0e;
 
   display: flex;
@@ -40,7 +41,7 @@
 
 .social-nav a:hover img {
   transform: scale(1.2);
-  filter: brightness(1.2) drop-shadow(0 0 5px #ffdfa2);
+  filter: brightness(1.2) drop-shadow(0 0 5px #f0bc4d);
 }
 
 /* =========================
