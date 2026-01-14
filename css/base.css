@@ -15,16 +15,16 @@ html, body {
   height: 100%;
 }
 
-.content-center-large {
+.site-main {
     flex: 1;
 }
 
-.content-gutter-large {
+.site-main {
     padding-left: 20px;
     padding-right: 20px;
 }
 
-.content-center-large {
+.site-main {
     max-width: 1200px;
     margin-left: auto !important;
     margin-right: auto !important;
@@ -40,7 +40,7 @@ html, body {
 }
 
 @media screen and (min-width: 960px) {
-    .content-gutter-large {
+    .site-main {
         padding-left: 50px;
         padding-right: 50px;
     }
