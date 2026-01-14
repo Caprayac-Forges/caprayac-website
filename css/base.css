@@ -2,6 +2,7 @@ body {
     font-size: 1em;
     font-family: 'Montserrat', sans-serif;
     letter-spacing: -0.05em;
+    padding: 2rem;
 
     flex-direction: column;
     display: flex;
