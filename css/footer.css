@@ -42,12 +42,9 @@
   filter: brightness(1.2) drop-shadow(0 0 5px #f0bc4d);
 }
 
-/* =========================
-   FOOTER WRAPPER
-========================= */
-
+/* Footer wrapper*/
 .site-footer {
-  background-color: #5c4135;
+  background-color: #240e0e;
   color: #f3bf4d;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
@@ -56,33 +53,24 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-/* =========================
-   FOOTER INNER LAYOUT
-========================= */
-
+/* Footer inner layout*/
 .footer-inner {
   max-width: 1200px;
   margin: 0 auto;
 
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: left;
   gap: 2rem;
 }
 
-/* =========================
-   BRAND
-========================= */
-
+/* Logo */
 .footer-logo {
   height: 48px;
   width: auto;
 }
 
-/* =========================
-   FOOTER NAVIGATION
-========================= */
-
+/* Footer navigation */
 .footer-nav {
   display: flex;
   gap: 1.5rem;
@@ -98,10 +86,7 @@
   text-decoration: underline;
 }
 
-/* =========================
-   COPYRIGHT / META
-========================= */
-
+/* Copyright / Meta */
 .footer-meta {
   margin-top: 1.5rem;
   text-align: center;
@@ -109,9 +94,7 @@
   opacity: 0.85;
 }
 
-/* =========================
-   MOBILE ADJUSTMENTS
-========================= */
+/* Adjust for mobile*/
 
 @media (max-width: 768px) {
   .footer-inner {
