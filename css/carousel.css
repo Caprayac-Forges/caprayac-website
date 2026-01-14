@@ -20,7 +20,7 @@
   width: 100vw; /* Full viewport width */
   margin-left: calc(-50vw + 50%); /* Center the carousel */
 
-  background: #381918;
+  background: linear-gradient(to bottom, #240e0e 0%, black 100%);
   overflow: hidden; /* Hide overflowing slides */
 }
 
