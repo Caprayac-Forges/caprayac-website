@@ -36,10 +36,10 @@ html, body {
 }
 
 @media screen and (min-width: 960px) {
-    .content-gutter-large {
+    /*.content-gutter-large {
         padding-left: 50px;
         padding-right: 50px;
-    }
+    } */
 }
 
 @property --angle {
