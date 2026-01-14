@@ -14,7 +14,7 @@ html, body {
   height: 100%;
 }
 
-.content-center-large.content-gutter-large {
+.content-center-large {
     flex: 1;
 }
 
