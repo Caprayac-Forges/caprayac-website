@@ -35,11 +35,11 @@ body {
     transition: background-color 0.3s ease-in-out;
 }
 
-/*
+
 .site-header-wrapper.site-header-transparent {
     background-color: transparent;
     border-bottom: none;
-}*/
+}
 
 .site-header-wrapper .mascot {
     height: 60px;
