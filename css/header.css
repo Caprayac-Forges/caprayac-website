@@ -26,8 +26,8 @@ body {
     letter-spacing: -0.05em;
     text-align: left;
 
-    background-color: #5c4135;
     color: #d0bc4d;
+    background-color: #5c4135;
 
     line-height: 1.5;
     font-weight: 400;
@@ -73,7 +73,7 @@ body {
 }
 
 .nav-links a {
-    color: #5c4135;
+    color: #d0bc4d;
     text-decoration: none;
     margin-left: 1.5rem;
     font-weight: 600;
