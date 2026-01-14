@@ -1,10 +1,8 @@
-/* =========================
-   SOCIAL BANNER
-========================= */
+/* Social banner*/
 
 .social-banner {
   width: 100vw;
-  height: 80 px;
+  height: 120 px;
   margin-left: calc(-50vw + 50%);
   background-color: #240e0e;
 
