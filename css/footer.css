@@ -66,8 +66,8 @@
 
 /* Logo */
 .text-yellow {
-  height: 48px;
-  width: auto;
+  max-width: 200px;
+  height: auto;
 }
 
 /* Footer navigation */
