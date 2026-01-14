@@ -1,37 +1,27 @@
-/* --------------------
-   Section spacing
--------------------- */
-
+/* Create space under "What we're up to" heading */
 .whats-new {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
-/* --------------------
-   Carousel wrapper
--------------------- */
-
+/* Outer carousel section */
 .carousel-container {
   width: 100%;
 }
 
-/* --------------------
-   Carousel viewport
--------------------- */
-
+/* Carousel viewport*/
 .carousel,
 .carousel-inner,
 .cards {
-  height: 400px;
+  height: 800px;
 }
 
 .carousel {
   position: relative;
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  height: 400px;
+  width: 100vw; /* Full viewport width */
+  margin-left: calc(-50vw + 50%); /* Center the carousel */
 
   background: #381918;
-  overflow: hidden;
+  overflow: hidden; /* Hide overflowing slides */
 }
 
 .carousel-inner {
@@ -41,47 +31,39 @@
   height: 100%;
 }
 
-
-
-
-/* --------------------
-   Track (film strip)
--------------------- */
-
+/* Card Track*/
 .cards {
-  flex-direction: row;
-  align-items: center;
+  flex-direction: row; /* Horizontal layout*/
+  align-items: center; /* Vertically align items*/
   height: 100%;
   margin: 0;
   padding: 0;
   display: flex;
 }
 
-/* --------------------
-   Slides
--------------------- */
-
+/* Cards */
 .card {
-  flex: 0 0 60%;
+  flex: 0 0 75%; /* Width of each card */
   height: 100%;
 
+  /*Center cards*/
   display: flex;
   align-items: center;
   justify-content: center;
 
-  opacity: 0.4;
-  transform: scale(0.9);
+  /*Make cards smaller and lower opacity by default*/
+  opacity: 0.25;
+  transform: scale(0.75);
   transition: transform 300ms ease, opacity 300ms ease;
 }
 
+/* Highlight the center card*/
 .card.is-active {
   opacity: 1;
   transform: scale(1);
 }
 
-/* --------------------
-   Card content
--------------------- */
+/* Style cards*/
 
 .carousel, .carousel-inner, .cards, .card {
   box-sizing: border-box;
@@ -94,9 +76,7 @@
   color: #d0bc4d;
 }
 
-/* --------------------
-   Arrows
--------------------- */
+/* Arrows*/
 
 .carousel-arrow {
   position: absolute;
