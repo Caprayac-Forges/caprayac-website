@@ -1,8 +1,6 @@
 body {
     padding: 1.8rem;
     padding-top: 90px;
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
 }
 
 .site-header-wrapper {
