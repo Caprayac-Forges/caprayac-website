@@ -38,6 +38,7 @@ html, body {
 
 .main {
     color: #d0bc4d;
+    padding-top: 80px;
 }
 
 @media screen and (min-width: 960px) {
