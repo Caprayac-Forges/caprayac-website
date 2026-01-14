@@ -47,26 +47,32 @@ body {
 }
 
 .social-links {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    color: #d0bc4d;
+  display: flex;
+  gap: 1.5rem;
 }
 
 .social-links a {
-    display: inline-flex;
-    align-items: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
 }
 
-.social-links img {
-    height: 24px;
-    width: 24px;
-    opacity: 0.5;
+.social-links a img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+
+  filter: brightness(0) invert(1);
+  transition: transform 0.25s ease, filter 0.25s ease;
 }
 
-.social-links img:hover {
-    opacity: 1.0;
-}   
+.social-links a:hover img {
+  transform: scale(1.2);
+  filter: brightness(1.2) drop-shadow(0 0 5px #f0bc4d);
+}
 
 .nav-links {
     display: flex;
