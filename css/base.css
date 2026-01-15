@@ -71,9 +71,13 @@ html {
 .staff-card {
     display: flex;
     gap: 1.5rem;
-    align-items: center;
-
+    flex-direction: row;
+    align-items: flex-start;
     max-width: 900px;
+}
+
+.staff-info {
+    flex: 1;
 }
 
 .staff-photo {
@@ -104,7 +108,7 @@ html {
 
 
 /* Adjust for other screens */
-@media screen and (min-width: 960px) {
+@media screen and (max-width: 768px) {
     .content-gutter-large {
         padding-left: 50px;
         padding-right: 50px;
