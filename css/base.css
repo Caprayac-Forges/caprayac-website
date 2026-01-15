@@ -72,8 +72,9 @@ html {
     display: flex;
     gap: 1.5rem;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     max-width: 900px;
+    padding: 1rem 0;
 }
 
 .staff-info {
@@ -81,7 +82,7 @@ html {
 }
 
 .staff-info h3 {
-    margin: 0 0 0.25rem 0;
+    margin: 0;
     font-size: 1.25rem;
 }
 
@@ -93,7 +94,7 @@ html {
 .staff-role {
     font-weight: 600;
     opacity: 0.8;
-    margin: 0 0 0.5rem 0;
+    margin: 0.25rem 0 0.5rem 0;
 }
 
 .staff-photo {
