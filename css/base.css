@@ -110,6 +110,13 @@ html {
     margin: 0.25rem 0 0.5rem 0;
 }
 
+.staff-about {
+    padding-top: 2rem;
+    color: white;
+    font-size: 1.25rem;
+    margin: 0;
+}
+
 .staff-photo {
     width: 300px;
     height: 500px;
