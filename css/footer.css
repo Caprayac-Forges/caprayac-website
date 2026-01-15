@@ -96,13 +96,13 @@
 
 @media (max-width: 768px) {
   .footer-brand-nav {
-    flex-direction: row;
+    flex-direction: column;
     text-align: left;
     gap: 1rem;
   }
 
   .footer-nav {
-    flex-direction: row;
+    flex-direction: column;
     align-items: flex-start;
     gap: 0.75rem;
   }
