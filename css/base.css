@@ -90,8 +90,16 @@ html {
     margin-top: 0.5rem;
 }
 
+.staff-card:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
 .staff-info {
     flex: 1;
+}
+
+.staff-card:nth-child(even) {
+    text-align: right;
 }
 
 .staff-info h3 {
