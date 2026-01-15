@@ -85,9 +85,8 @@ html {
 }
 
 .about-team-hero .team-photo {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
+    width: 500px;
+    height: 300px;
     border-radius: 8px;
     object-fit: cover;
 }
