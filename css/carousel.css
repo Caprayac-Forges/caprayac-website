@@ -57,6 +57,7 @@
   opacity: 1;
   transform: scale(1);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  border: 3px solid #000000;
 }
 
 .card.is-active .card-divider {
@@ -116,6 +117,33 @@
   line-height: 1.6;
   opacity: 0.9;
   color: white;
+}
+
+.card-button {
+  display: inline-block;
+  margin-top: 1.25rem;
+  
+  padding: 0.625rem 1.25rem;
+  border-radius: 900px;
+  background-color: #d0bc4d;
+  color: #381918;
+
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+
+  transition: transform 150ms ease, box-shadow 150ms ease, background0-color 150ms ease;
+}
+
+card-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0, 0.25);
+  background-color: #f0d86a;
+}
+
+.card-button:active {
+  transform: translateY(0);
+  box-shadow: none;
 }
 
 /* Arrows*/
@@ -181,6 +209,11 @@
   .card-content {
     flex-direction: column;
     text-align: center;
+  }
+
+  .card-button {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .card-divider {
