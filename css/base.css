@@ -156,6 +156,14 @@ html {
         text-align: left;
     }
 
+    .staff-card:nth-child(even) {
+        flex-direction: column;
+    }
+
+    .staff-card:nth-child(even) .staff-info {
+        text-align: left;
+    }
+
     .body, .site-main {
         padding-top: 120px;
     }

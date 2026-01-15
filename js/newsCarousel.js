@@ -1,21 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
+  /* Get all neede elements*/
   const track = document.getElementById("newsCarousel");
   const carousel = track.closest(".carousel");
   const inner = carousel.querySelector(".carousel-inner");
   const prevBtn = carousel.querySelector(".carousel-arrow.left");
   const nextBtn = carousel.querySelector(".carousel-arrow.right");
 
+  /* Animation settings */
   const DURATION = 300;
   const EASE = "cubic-bezier(0, 0, 0.2, 1)";
 
+  /* Slide state variables */
   let slides = Array.from(track.children);
   let currentIndex = 1;
   let isAnimating = false;
 
-  /* -----------------------------
-     Clone edges for infinite loop
-  ----------------------------- */
+  /* Create clones to loop the slides*/
 
+  /*Append first and last clones*/
   const firstClone = slides[0].cloneNode(true);
   const lastClone = slides[slides.length - 1].cloneNode(true);
 
@@ -28,32 +30,29 @@ document.addEventListener("DOMContentLoaded", () => {
   slides = Array.from(track.children);
   currentIndex = 1;
 
-  /* -----------------------------
-     Helpers
-  ----------------------------- */
-
+  /* Measure the width of slide*/
   function slideWidth() {
     return slides[0].getBoundingClientRect().width;
   }
 
+  /* Center the current slide in the container*/
   function setPosition(animate = true) {
   const containerRect = inner.getBoundingClientRect();
   const slideRect = slides[currentIndex].getBoundingClientRect();
 
-  // Where the container center is (in viewport coordinates)
+  /* Find where container and slides are*/
   const containerCenter = containerRect.left + containerRect.width / 2;
 
-  // Where the slide center is (in viewport coordinates)
   const slideCenter = slideRect.left + slideRect.width / 2;
 
-  // How far we need to move the track to align those centers
+  /* How far the slide is*/
   const delta = slideCenter - containerCenter;
 
   track.style.transition = animate
     ? `transform ${DURATION}ms ${EASE}`
     : "none";
 
-  // Current translateX (read from computed transform)
+  /* Current translate value*/
   const computed = getComputedStyle(track).transform;
   let currentTranslate = 0;
   if (computed && computed !== "none") {
@@ -61,21 +60,20 @@ document.addEventListener("DOMContentLoaded", () => {
     currentTranslate = matrix.m41;
   }
 
-  // Move the track by delta (note: translateX is negative to move left)
+  /* Move the track by delta*/
   track.style.transform = `translateX(${currentTranslate - delta}px)`;
 
   requestAnimationFrame(updateActiveSlide);
 }
 
 
+  /* Update active slide class*/
   function updateActiveSlide() {
     slides.forEach(slide => slide.classList.remove("is-active"));
     slides[currentIndex].classList.add("is-active");
   }
 
-  /* -----------------------------
-     Navigation
-  ----------------------------- */
+  /* Navigation*/
 
   function goNext() {
     if (isAnimating) return;
@@ -94,9 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
   nextBtn.addEventListener("click", goNext);
   prevBtn.addEventListener("click", goPrev);
 
-  /* -----------------------------
-     Loop correction
-  ----------------------------- */
+  /* Loop correction*/
 
   track.addEventListener("transitionend", () => {
     if (slides[currentIndex].classList.contains("is-clone")) {
@@ -112,18 +108,13 @@ document.addEventListener("DOMContentLoaded", () => {
     updateActiveSlide();
   });
 
-  /* -----------------------------
-     Resize handling
-  ----------------------------- */
+  /* Handling resize */
 
   window.addEventListener("resize", () => {
     setPosition(false);
   });
 
-  /* -----------------------------
-     Init (important)
-  ----------------------------- */
-
+  /* Initial position */
   requestAnimationFrame(() => {
     setPosition(false);
     updateActiveSlide();
