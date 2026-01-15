@@ -69,6 +69,10 @@ html {
     opacity: 0.8;
 }
 
+.about-hero-text p{
+    text-indent: 1.5em;
+}
+
 .about-section h2 {
     margin-bottom: 1rem;
 }
@@ -125,6 +129,7 @@ html {
     font-size: 1rem;
     margin: 0;
     opacity: 0.8;
+    text-indent: 1.5em;
 }
 
 .staff-photo {
