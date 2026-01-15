@@ -56,7 +56,11 @@
 .card.is-active {
   opacity: 1;
   transform: scale(1);
-  background: #381918;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.card.is-active .card-divider {
+  background-color: #d0bc4d;
 }
 
 /* Style cards*/
@@ -70,6 +74,48 @@
   font-size: 35px;
   font-weight: bold;
   color: #d0bc4d;
+}
+
+.card-content {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.card-image {
+  flex: 0 0 40%;
+}
+
+.card-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.card-divider {
+  width: 2px;
+  height: 60%;
+  background-color: #d0bc4d;
+}
+
+.card-text {
+  flex: 1;
+}
+
+.card-text h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+  color: #d0bc4d;
+}
+
+.card-text p {
+  margin: 0;
+  line-height: 1.6;
+  opacity: 0.9;
+  color: white;
 }
 
 /* Arrows*/
@@ -130,6 +176,20 @@
 
   .card-title {
     font-size: 24px;
+  }
+
+  .card-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .card-divider {
+    width: 60%;
+    height: 2px;
+  }
+
+  .card-image {
+    width: 100%;
   }
 
   .carousel-arrow.left {
