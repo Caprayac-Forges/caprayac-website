@@ -114,10 +114,6 @@ html {
         align-items: flex-start;
         text-align: left;
     }
-
-    .team-photo {
-        width: 200px;
-    }
 }
 
 @property --angle {
