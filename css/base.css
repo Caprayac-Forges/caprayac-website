@@ -70,7 +70,7 @@ html {
     gap: 2rem;
 }
 
-.team-card {
+.staff-card {
     display: flex;
     gap: 1.5rem;
     align-items: flex-start;
@@ -90,7 +90,7 @@ html {
     font-size: 1.5rem;
 }
 
-.team-role {
+.staff-role {
     font-weight: 600;
     opacity: 0.8;
     margin-bottom: 0.5rem;
