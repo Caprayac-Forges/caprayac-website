@@ -81,7 +81,18 @@ html {
 }
 
 .staff-info h3 {
-    margin: 0 0 0.25rem 0;
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.staff-role {
+    font-weight: 600;
+    opacity: 0.8;
+    margin-bottom: 0.5rem;
+}
+
+.staff-info p:last-child {
+    margin-bottom: 0;
 }
 
 .staff-photo {
@@ -104,15 +115,7 @@ html {
     font-size: 1.5rem;
 }
 
-.staff-role {
-    font-weight: 600;
-    opacity: 0.8;
-    margin-bottom: 0.5rem;
-}
 
-.staff-info p:last-child {
-    margin-bottom: 0;
-}
 
 
 /* Adjust for other screens */
