@@ -12,6 +12,7 @@ body {
 
     width: 100vw;
     margin-left: calc(-50vw + 50%);
+    padding-top: 60px;
 }
 
 html, body {
@@ -35,10 +36,6 @@ html {
 
     padding-left: 2rem;
     padding-right: 2rem;
-}
-
-.main {
-    padding-top: 80px;
 }
 
 .content-center-large {
