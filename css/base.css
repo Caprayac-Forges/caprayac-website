@@ -9,15 +9,32 @@ body {
     color: #d0bc4d;
     background-color: #240e0e;
     overflow-x: hidden;
+
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
 }
 
 html, body {
   height: 100%;
   margin: 0;
+  padding: 0;
+}
+
+html {
+    overflow: hidden;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 .site-main {
     flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
 .main {
@@ -36,10 +53,10 @@ html, body {
 }
 
 @media screen and (min-width: 960px) {
-    /*.content-gutter-large {
+    .content-gutter-large {
         padding-left: 50px;
         padding-right: 50px;
-    } */
+    } 
 }
 
 @property --angle {
