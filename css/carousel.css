@@ -203,6 +203,7 @@ card-button:hover {
     min-height: 700px;
     overflow-x: hidden;
     overflow-y: visible;
+    padding-top: 120px;
   }
 
   .carousel-inner,
