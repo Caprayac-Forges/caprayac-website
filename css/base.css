@@ -114,6 +114,10 @@ html {
         align-items: flex-start;
         text-align: left;
     }
+
+    .body {
+        padding-top: 100px;
+    }
 }
 
 @property --angle {
