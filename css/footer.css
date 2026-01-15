@@ -93,17 +93,17 @@
 }
 
 /* Adjust for mobile*/
-/*
+
 @media (max-width: 768px) {
   .footer-brand-nav {
-    flex-direction: column;
+    flex-direction: row;
     text-align: left;
     gap: 1rem;
   }
 
   .footer-nav {
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
     gap: 0.75rem;
   }
-} */
+} 
