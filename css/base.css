@@ -67,9 +67,6 @@ html {
     margin: 0;
     color: white;
     opacity: 0.8;
-}
-
-.about-hero-text p{
     text-indent: 1.5em;
 }
 
@@ -129,7 +126,6 @@ html {
     font-size: 1rem;
     margin: 0;
     opacity: 0.8;
-    text-indent: 1.5em;
 }
 
 .staff-photo {
