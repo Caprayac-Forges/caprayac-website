@@ -115,7 +115,7 @@ html {
         text-align: left;
     }
 
-    .body {
+    .body, .site-main {
         padding-top: 100px;
     }
 }
