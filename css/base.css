@@ -49,6 +49,7 @@ html {
     padding-right: 2rem;
 }
 
+/* About Page */
 .about-team-hero {
     display: flex;
     justify-content: flex-start;
@@ -71,6 +72,8 @@ html {
     display: flex;
     gap: 1.5rem;
     align-items: flex-start;
+
+    max-width: 900px;
 }
 
 .team-photo {
@@ -94,7 +97,7 @@ html {
 }
 
 
-
+/* Adjust for other screens */
 @media screen and (min-width: 960px) {
     .content-gutter-large {
         padding-left: 50px;
