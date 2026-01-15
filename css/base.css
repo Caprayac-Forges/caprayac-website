@@ -96,7 +96,7 @@ html {
 
 .staff-info h3 {
     margin: 0;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .staff-info p {
@@ -106,7 +106,7 @@ html {
 
 .staff-role {
     font-weight: 600;
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     opacity: 0.8;
     margin: 0.25rem 0 0.5rem 0;
 }
