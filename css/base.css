@@ -55,7 +55,7 @@ html {
     justify-content: flex-start;
 }
 
-.team-hero-image {
+.about-team-hero img {
     width: 100%;
     max-width: 500px;
     border-radius: 8px;
@@ -69,23 +69,20 @@ html {
 }
 
 .staff-card {
-    display: flex;
-    gap: 1.5rem;
-    align-items: flex-start;
-
-    max-width: 900px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
-.team-photo {
+.staff-photo {
     width: 300px;
     height: 300px;
     border-radius: 8px;
     object-fit: cover;
     flex-shrink: 0;
-    justify-content: center;
 }
 
-.team-info h3 {
+.staff-info h3 {
     margin: 0;
     font-size: 1.5rem;
 }
@@ -104,13 +101,13 @@ html {
         padding-right: 50px;
     } 
 
-    .team-card {
+    .staff-card {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         text-align: center;
     }
 
-    .team-photo {
+    .staff-photo {
         width: 200px;
         height: 200px;
     }
