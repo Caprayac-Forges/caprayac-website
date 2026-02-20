@@ -133,7 +133,6 @@ html {
 
 .staff-header a:hover img {
     transform: scale(1.2);
-    filter: brightness(1.2) drop-shadow(0 0 5px #f0bc4d);
     opacity: 0.8;
 }
 
