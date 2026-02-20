@@ -114,6 +114,10 @@ html {
     gap: 0.75rem;
 }
 
+.staff-header:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
 .staff-header h3 {
     margin: 0;
 }
@@ -130,8 +134,6 @@ html {
     object-fit: contain;
 
     filter: invert(88%) sepia(64%) saturate(553%) hue-rotate(334deg) brightness(87%) contrast(84%);
-    
-    
 }
 
 .staff-header a:hover img {
