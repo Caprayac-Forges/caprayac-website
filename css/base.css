@@ -112,7 +112,6 @@ html {
 .staff-header {
     display: inline-flex;
     align-items: center;
-    justify-content: flex-start;
     gap: 0.5rem;
     flex-wrap: nowrap;
 }
@@ -125,7 +124,6 @@ html {
 .staff-header img {
     width: 20px;
     height: 20px;
-    display: block;
 
     filter: invert(88%) sepia(64%) saturate(553%) hue-rotate(334deg) brightness(87%) contrast(84%);
 }
