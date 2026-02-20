@@ -128,9 +128,6 @@ html {
     width: 20px;
     height: 20px;
     object-fit: contain;
-
-    filter: brightness(0) invert(1);
-    transition: transform 0.25s ease, opacity 0.25s ease, filter 0.25s ease;
 }
 
 .staff-header a:hover img {
