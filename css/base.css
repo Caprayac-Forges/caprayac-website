@@ -74,6 +74,13 @@ html {
     margin-bottom: 1rem;
 }
 
+.staff-info img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
 .team-grid {
     display: flex;
     flex-direction: column;
