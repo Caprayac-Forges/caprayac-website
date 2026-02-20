@@ -115,7 +115,6 @@ html {
 .staff-header img {
     width: 20px;
     height: 20px;
-    object-fit: contain;
 
     filter: invert(88%) sepia(64%) saturate(553%) hue-rotate(334deg) brightness(87%) contrast(84%);
 }
