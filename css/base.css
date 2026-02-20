@@ -110,7 +110,7 @@ html {
 }
 
 .staff-header {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 0.5rem;
     flex-wrap: nowrap;
