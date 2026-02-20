@@ -93,14 +93,15 @@ html {
 
 .staff-card:nth-child(even) {
     flex-direction: row-reverse;
+    text-align: right;
 }
 
 .staff-info {
     flex: 1;
 }
 
-.staff-card:nth-child(even) {
-    text-align: right;
+.staff-card:nth-child(even) .staff-header {
+    justify-content: flex-end;
 }
 
 .staff-info h3 {
@@ -108,8 +109,11 @@ html {
     font-size: 1.5rem;
 }
 
-.staff-header h3 {
-    margin: 0;
+.staff-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: nowrap;
 }
 
 .staff-header img {
